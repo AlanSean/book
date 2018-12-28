@@ -1,0 +1,84 @@
+{
+    "title": "book",
+    "description": "记录杂学,nginx,http2,https,serviceWorker,javascript,html,Vue,react,webpack",
+    "author": "miao",
+    "output.name": "site",
+    "language": "zh-hans",
+    "gitbook": "3.2.3",
+    "root": ".",
+    "structure": {
+        "readme": "gather.md"
+    },
+    "links": {
+        "sidebar": {
+            "Home": "//www.hqboke.cn"
+        }
+    },
+    "plugins": [
+        "-lunr",
+        "-search",
+        "-highlight",
+        "-livereload",
+        "search-plus",
+        "github",
+        "github-buttons",
+        "include-codeblock",
+        "emphasize",
+        "tbfed-pagefooter",
+        "favicon",
+        "-sharing",
+        "sharing-plus",
+        "graph",
+        "chart",
+        "pageview-count"
+    ],
+
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/AlanSean/book"
+        },
+        "github-buttons": {
+            "repo": "AlanSean/book",
+            "types": [
+                "star"
+            ],
+            "size": "small"
+        },
+        "include-codeblock": {
+            "template": "default",
+            "unindent": true,
+            "edit": false
+        },
+        "sharing": {
+            "douban": false,
+            "facebook": false,
+            "google": true,
+            "hatenaBookmark": false,
+            "instapaper": false,
+            "line": false,
+            "linkedin": true,
+            "messenger": false,
+            "pocket": false,
+            "qq": false,
+            "qzone": false,
+            "stumbleupon": false,
+            "twitter": false,
+            "viber": false,
+            "vk": false,
+            "weibo": true,
+            "whatsapp": false
+        },
+        "tbfed-pagefooter": {
+            "copyright": "",
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "sitemap-general": {
+            "prefix": "http://gitbook.hqboke.com"
+        },
+        "favicon": {
+            "shortcut": "favicon.ico",
+            "bookmark": "favicon.ico"
+        }
+    }
+}
