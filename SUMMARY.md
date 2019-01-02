@@ -3,9 +3,13 @@
 * [**gitbook日常错误**](gitbook.md)
 
 * [杂学]()
-    * [1.gather](gather.md)
-    * [2.http2升级](http2升级.md)
-    * [3.serviceWorker配置~要素 以及注意点](serviceWorker配置~要素 以及注意点.md)
+    * [1.gather](clutter/gather.md)
+    * [3.serviceWorker配置~要素 以及注意点](clutter/serviceWorker配置~要素 以及注意点.md)
 
 * [javascript记录]()
-    * [1.浅拷贝与深拷贝](浅拷贝与深拷贝.md)
+    * [1.浅拷贝与深拷贝](javascript记录/浅拷贝与深拷贝.md)
+
+* [linux]()
+    * [1.node安装](linux/node安装.md)
+    * [2.http2升级](linux/http2升级.md)
+    * [2.mysql](linux/mysql.md)
