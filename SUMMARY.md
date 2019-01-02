@@ -12,4 +12,4 @@
 * [linux]()
     * [1.node安装](linux/node安装.md)
     * [2.http2升级](linux/http2升级.md)
-    * [2.mysql](linux/mysql.md)
+    * [2.mongoDB](linux/mongoDB.md)
