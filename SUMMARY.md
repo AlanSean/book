@@ -2,6 +2,7 @@
 
 * [**gitbook日常错误**](gitbook.md)
 * [**git**](git.md)
+* [**vue-cli3**](vue-cli3.md)
 * [杂学]()
     * [1.gather](clutter/gather.md)
     * [3.serviceWorker配置~要素 以及注意点](clutter/serviceWorker配置~要素 以及注意点.md)
