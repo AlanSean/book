@@ -21,4 +21,4 @@
     git reset HEAD  文件名
 ```
 ## 取消文件的修改
-`git checkout -- benchmarks.rb`
+`git checkout -- 文件名`
