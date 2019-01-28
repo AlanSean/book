@@ -269,7 +269,7 @@ app.listen(8080, () => {
 ```
 
 做完这一步之后，就可以预览基本的服务渲染了。
-后面就只差开发环境的配置，以及到node数据的传递
+后面就只差开发环境的配置，以及到node数据的传递(vuex)
 
 ```
     npm run build
@@ -278,4 +278,82 @@ app.listen(8080, () => {
     F12 - Network - Doc 就可以看到内容
 ```
 
+
+### 最终目录结构
+```
+|-- vuessr
+    |-- .gitignore
+    |-- babel.config.js
+    |-- package-lock.json
+    |-- package.json
+    |-- README.md
+    |-- vue.config.js
+    |-- nodeScript //node 渲染配置
+    |   |-- index.js
+    |   |-- proxy.js
+    |   |-- server.js
+    |-- public//模板文件
+    |   |-- favicon.ico
+    |   |-- index.html
+    |   |-- index.nodeTempalte.html
+    |-- src
+        |-- App.vue
+        |-- main.js
+        |-- router.config.js/。路由集合
+        |-- store.config.js//vuex 集合
+        |-- assets//全局静态资源源码
+        |   |-- 备注.txt
+        |   |-- img
+        |       |-- logo.png
+        |-- components//全局组件
+        |   |-- Head
+        |       |-- index.js
+        |       |-- index.scss
+        |       |-- index.vue
+        |       |-- img
+        |           |-- logo.png
+        |-- entry//cli3入口
+        |   |-- client.js
+        |   |-- server.js
+        |   |-- 备注.txt
+        |-- methods//公共方法
+        |   |-- 备注.txt
+        |   |-- mixin
+        |       |-- index.js
+        |-- pages//源码目录
+        |   |-- home
+        |   |   |-- index.js
+        |   |   |-- index.scss
+        |   |   |-- index.vue
+        |   |   |-- img
+        |   |   |   |-- flow.png
+        |   |   |   |-- head_portrait.jpg
+        |   |   |   |-- logo.png
+        |   |   |   |-- vuessr.png
+        |   |   |-- vue
+        |   |   |   |-- index.js
+        |   |   |   |-- index.scss
+        |   |   |   |-- index.vue
+        |   |   |-- vueCli3
+        |   |   |   |-- index.js
+        |   |   |   |-- index.scss
+        |   |   |   |-- index.vue
+        |   |   |-- vueSSR
+        |   |   |   |-- index.js
+        |   |   |   |-- index.scss
+        |   |   |   |-- index.vue
+        |   |   |-- vuex
+        |   |       |-- index.js
+        |   |       |-- index.scss
+        |   |       |-- index.vue
+        |   |-- router//路由配置
+        |   |   |-- index.js
+        |   |-- store//vuex配置
+        |       |-- all.js
+        |       |-- gather.js
+        |       |-- index.js
+        |-- static//cdn资源
+            |-- 备注.txt
+
+```
 **[github欢迎watch](https://github.com/AlanSean/vuessr)**
