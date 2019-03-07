@@ -223,11 +223,6 @@ router.onReady( () => {
 
 vuex 明天再做
 
+[项目github地址](https://github.com/AlanSean/vuessr )
 
-
-1) [vueSSR: 从0到1构建vueSSR项目 --- 初始化](https://segmentfault.com/a/1190000018026161)
-2) [vueSSR: 从0到1构建vueSSR项目 --- 路由的构建](https://segmentfault.com/a/1190000018043697)
-3) [vueSSR: 从0到1构建vueSSR项目 --- node以及vue-cli3的配置](https://segmentfault.com/a/1190000018026161)
-4) [vueSSR: 从0到1构建vueSSR项目 --- vuex的配置（数据预取）](https://segmentfault.com/a/1190000018409512)
-5) [vueSSR: 从0到1构建vueSSR项目 --- 开发环境的部署](https://segmentfault.com/a/1190000018410098)
-6) [vueSSR: 从0到1构建vueSSR项目 --- 伪热更新](https://segmentfault.com/a/1190000018421929)
+[项目公网地址](https://adm.hqboke.cn/home/vueCli3)

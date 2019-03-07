@@ -259,4 +259,6 @@ main.js 新增代码
 ```
 
 
-下面更新，开发环境部署相关
+[项目github地址](https://github.com/AlanSean/vuessr )
+
+[项目公网地址](https://adm.hqboke.cn/home/vueCli3)
