@@ -14,7 +14,7 @@
     * [开发环境的部署 ](vuessr从0开始/开发环境的部署.md)
     * [伪热更新](vuessr从0开始/伪热更新.md)
 * [webSocket二进制数据传输]()
-    * [伪热更新](webSocket二进制数据传输/字节算法准备基础.md)
+    * [字节算法准备基础](webSocket二进制数据传输/字节算法准备基础.md)
 * [杂学]()
     * [1.gather](clutter/gather.md)
     * [3.serviceWorker配置~要素 以及注意点](clutter/serviceWorker配置~要素 以及注意点.md)
