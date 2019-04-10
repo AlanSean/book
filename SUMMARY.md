@@ -15,6 +15,8 @@
     * [伪热更新](vuessr从0开始/伪热更新.md)
 * [webSocket二进制数据传输](webSocket二进制数据传输/字节算法准备基础.md)
     * [字节算法准备基础](webSocket二进制数据传输/字节算法准备基础.md)
+    * [UTF16与UTF8的互转](webSocket二进制数据传输/UTF16与UTF8的互转.md)
+    * [UTF-16和UTF-8转Unicode](webSocket二进制数据传输/UTF-16和UTF-8转Unicode.md)
 * [杂学](clutter/gather.md)
     * [1.gather](clutter/gather.md)
     * [2.serviceWorker配置~要素 以及注意点](clutter/serviceWorker配置~要素 以及注意点.md)
