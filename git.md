@@ -1,4 +1,15 @@
 #git
+## 初始化配置 
+
+```
+ git config --global  --list 查看配置项
+ git config --global user.name  'xxx'
+ git config --global user.email 'xxx'
+```
+##  免密码
+ssh-keygen -t rsa -C "这里换上你的邮箱"
+在指定的保存路径下会生成2个名为id_rsa和id_rsa.pub的文件：
+github 选择SSH and GPG keys 配置即可
 
 ## 删除某文件历史记录
 ```
