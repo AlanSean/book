@@ -34,3 +34,7 @@ github 选择SSH and GPG keys 配置即可
 ```
 ## 取消文件的修改
 `git checkout -- 文件名`
+
+## 恢复单个文件
+    git log '文件路径'
+    git checkout 'logid' '文件路径'
