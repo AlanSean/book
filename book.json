@@ -6,15 +6,13 @@
     "language": "zh-hans",
     "gitbook": "3.2.3",
     "root": ".",
-    "structure": {
-        "readme": "gitbook.md"
-    },
     "links": {
         "sidebar": {
             "Home": "//www.hqboke.cn"
         }
     },
     "plugins": [
+        "expandable-chapters",
         "-lunr",
         "-search",
         "-highlight",
@@ -30,9 +28,10 @@
         "sharing-plus",
         "graph",
         "chart",
+        "theme-comscore",
         "pageview-count"
+        
     ],
-
     "pluginsConfig": {
         "github": {
             "url": "https://github.com/AlanSean/book"
