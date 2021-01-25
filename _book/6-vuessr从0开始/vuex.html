@@ -1,0 +1,1055 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Vuex · book</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="miao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="vue开发依赖的相关配置.html" />
+    
+    
+    <link rel="prev" href="vue-server-renderer.html" />
+    
+
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    <script src="../gitbook/gitbook-plugin-graph/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-graph/function-plot.js"></script>    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"AlanSean/book","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="//www.hqboke.cn" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1-clutter/">
+            
+                <a href="../1-clutter/">
+            
+                    
+                    Clutter
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1-clutter/gather.html">
+            
+                <a href="../1-clutter/gather.html">
+            
+                    
+                    Gather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1-clutter/serviceWorker配置.html">
+            
+                <a href="../1-clutter/serviceWorker配置.html">
+            
+                    
+                    ServiceWorker配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../2-ios调试/">
+            
+                <a href="../2-ios调试/">
+            
+                    
+                    Ios调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3-javascript记录/">
+            
+                <a href="../3-javascript记录/">
+            
+                    
+                    Javascript记录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3-javascript记录/浅拷贝与深拷贝.html">
+            
+                <a href="../3-javascript记录/浅拷贝与深拷贝.html">
+            
+                    
+                    浅拷贝与深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../4-linux/">
+            
+                <a href="../4-linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../4-linux/git安装.html">
+            
+                <a href="../4-linux/git安装.html">
+            
+                    
+                    Git安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../4-linux/http2升级.html">
+            
+                <a href="../4-linux/http2升级.html">
+            
+                    
+                    Http2升级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../4-linux/lnmp/README.md">
+            
+                <span>
+            
+                    
+                    Lnmp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../4-linux/lnmp/安装.html">
+            
+                <a href="../4-linux/lnmp/安装.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../4-linux/mongoDB.html">
+            
+                <a href="../4-linux/mongoDB.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../4-linux/mysql.html">
+            
+                <a href="../4-linux/mysql.html">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../4-linux/nginx.html">
+            
+                <a href="../4-linux/nginx.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../4-linux/node安装.html">
+            
+                <a href="../4-linux/node安装.html">
+            
+                    
+                    Node安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../4-linux/nvm.html">
+            
+                <a href="../4-linux/nvm.html">
+            
+                    
+                    Nvm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../4-linux/命令.html">
+            
+                <a href="../4-linux/命令.html">
+            
+                    
+                    命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../4-linux/外网问题.html">
+            
+                <a href="../4-linux/外网问题.html">
+            
+                    
+                    外网问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../5-puppeteer/">
+            
+                <a href="../5-puppeteer/">
+            
+                    
+                    Puppeteer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../5-puppeteer/安装.html">
+            
+                <a href="../5-puppeteer/安装.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Vuessr从0开始
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="vue-server-renderer.html">
+            
+                <a href="vue-server-renderer.html">
+            
+                    
+                    Vue Server Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.2" data-path="vuex.html">
+            
+                <a href="vuex.html">
+            
+                    
+                    Vuex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="vue开发依赖的相关配置.html">
+            
+                <a href="vue开发依赖的相关配置.html">
+            
+                    
+                    Vue开发依赖的相关配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="伪热更新.html">
+            
+                <a href="伪热更新.html">
+            
+                    
+                    伪热更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="准备.html">
+            
+                <a href="准备.html">
+            
+                    
+                    准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="开发环境的部署.html">
+            
+                <a href="开发环境的部署.html">
+            
+                    
+                    开发环境的部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="开始.html">
+            
+                <a href="开始.html">
+            
+                    
+                    开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../7-WebSocket二进制数据传输/">
+            
+                <a href="../7-WebSocket二进制数据传输/">
+            
+                    
+                    WebSocket二进制数据传输
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../7-webSocket二进制数据传输/UTF-16和UTF-8转Unicode.html">
+            
+                <a href="../7-webSocket二进制数据传输/UTF-16和UTF-8转Unicode.html">
+            
+                    
+                    UTF 16和UTF 8转Unicode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../7-webSocket二进制数据传输/Unicode转UTF16与UTF8.html">
+            
+                <a href="../7-webSocket二进制数据传输/Unicode转UTF16与UTF8.html">
+            
+                    
+                    Unicode转UTF16与UTF8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../7-webSocket二进制数据传输/字节算法准备基础.html">
+            
+                <a href="../7-webSocket二进制数据传输/字节算法准备基础.html">
+            
+                    
+                    字节算法准备基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../8-随便写写/">
+            
+                <a href="../8-随便写写/">
+            
+                    
+                    随便写写
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../8-随便写写/Browserslist详解.html">
+            
+                <a href="../8-随便写写/Browserslist详解.html">
+            
+                    
+                    Browserslist详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../8-随便写写/element-ui.html">
+            
+                <a href="../8-随便写写/element-ui.html">
+            
+                    
+                    Element Ui
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../8-随便写写/git.html">
+            
+                <a href="../8-随便写写/git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Vuex</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="vuex&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;">vuex&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;</h1>
+<p>&#x4E0A;&#x4E00;&#x7AE0;&#x505A;&#x4E86;<a href="https://segmentfault.com/a/1190000018043697" target="_blank">node&#x4EE5;&#x53CA;vue-cli3&#x7684;&#x914D;&#x7F6E;</a>,&#x4ECA;&#x5929;&#x5C31;&#x6765;&#x505A;vuex&#x7684;&#x90E8;&#x5206;&#x3002;
+&#x5148;&#x6253;&#x5F00;<a href="https://ssr.vuejs.org/zh/guide/data.html" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;-&#x6570;&#x636E;&#x9884;&#x53D6;&#x548C;&#x72B6;&#x6001;</a></p>
+<p>&#x770B;&#x5B8C;&#x4E4B;&#x540E;&#xFF0C;&#x53D1;&#x73B0;&#x5927;&#x81F4;&#x7684;&#x903B;&#x8F91;&#x5C31;&#x662F;
+&#x5229;&#x7528;mixin&#xFF0C;&#x62E6;&#x622A;&#x9875;&#x9762;&#x6E32;&#x67D3;&#x5B8C;&#x6210;&#x4E4B;&#x524D;&#xFF0C;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x5B9E;&#x4F8B;&#x662F;&#x5426;&#x542B;&#x6709;&apos;asyncData&apos;&#x51FD;&#x6570;(&#x7531;&#x4F60;&#x521B;&#x5EFA;&#x4EE5;&#x53CA;&#x4EFB;&#x610F;&#x540D;&#x79F0;)&#xFF0C;
+&#x5982;&#x679C;&#x542B;&#x6709;&#x5C31;&#x8FDB;&#x884C;&#x8C03;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x4F20;&#x5165;&#x4F60;&#x9700;&#x8981;&#x7684;&#x5BF9;&#x8C61;&#x6BD4;&#x5982;(store,route)</p>
+<p>&#x4F8B;&#x5B50;</p>
+<pre><code>// pages/vuex/index.js
+export default {
+    name: &quot;vuex&quot;,
+    asyncData({
+        store,
+        route
+    }) {
+        // &#x89E6;&#x53D1; action &#x540E;&#xFF0C;&#x4F1A;&#x8FD4;&#x56DE; Promise
+        return store.dispatch(&apos;fetchItem&apos;, route.path)
+    },
+    computed: {
+        // &#x4ECE; store &#x7684; state &#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x83B7;&#x53D6; item&#x3002;
+        item() {
+            return this.$store.state.items[this.$route.path]
+        }
+    }
+}
+
+
+//mixin
+
+import Vue from &apos;vue&apos;;
+Vue.mixin({
+    beforeMount() {
+        const {
+            asyncData
+        } = this.$options
+        if (asyncData) {
+            this.dataPromise = asyncData({
+                store: this.$store,
+                route: this.$route
+            })
+        }
+    }
+})
+</code></pre><p>&#x4E0A;&#x9762;&#x53EA;&#x662F;&#x4E2A;&#x5927;&#x6982;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x4E0B;&#x9762;&#x5F00;&#x59CB;&#x6B63;&#x5F0F;&#x6765;&#x505A;&#x5427;&#x3002;
+    &#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E9B;&#x6587;&#x4EF6;
+        src/store.config.js  &#x8DDF;router.config.js &#x4E00;&#x6837;&#xFF0C;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x8FD0;&#x884C;&#x907F;&#x514D;&#x72B6;&#x6001;&#x5355;&#x4F8B;
+        src/pages/store/all.js &#x5168;&#x5C40;&#x516C;&#x5171;&#x6A21;&#x5757;</p>
+<pre><code>//  src/pages/store/all.js
+    const all = {
+        //&#x5F00;&#x542F;&#x547D;&#x540D;&#x7A7A;&#x95F4;
+        namespaced: true,
+        //ssr&#x6CE8;&#x610F;&#x4E8B;&#x9879; state &#x5FC5;&#x987B;&#x4E3A;&#x51FD;&#x6570;
+        state: () =&gt; ({
+            count:0
+        }),
+        mutations: {
+            inc: state =&gt; state.count++
+        },
+        actions: {
+            inc: ({ commit }) =&gt; commit(&apos;inc&apos;)
+        }
+    }
+    export default all;
+</code></pre><h4 id="vuex-&#x6A21;&#x5757;">vuex &#x6A21;&#x5757;</h4>
+<p>all &#x5355;&#x72EC;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x6A21;&#x5757;
+&#x5982;&#x679C;home&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x5728;home&#x4E0B; &#x60F0;&#x6027;&#x6CE8;&#x518C;&#x6A21;&#x5757;
+&#x4F46;&#x662F;&#x8BB0;&#x5F97;&#x9875;&#x9762;&#x9500;&#x6BC1;&#x65F6;&#xFF0C;&#x4E5F;&#x4E00;&#x5B9A;&#x8981;&#x9500;&#x6BC1;&#x6A21;&#x5757;&#xFF01;&#xFF01;&#xFF01;
+&#x56E0;&#x4E3A;&#x5F53;&#x591A;&#x6B21;&#x8BBF;&#x95EE;&#x8DEF;&#x7531;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x91CD;&#x590D;&#x6CE8;&#x518C;&#x6A21;&#x5757;&#x3002;
+&#x5982;&#x679C;&#x60F3;&#x53EA;&#x6709;&#x4E2A;&#x522B;&#x51E0;&#x4E2A;&#x8DEF;&#x7531;&#x5171;&#x7528;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#xFF0C;
+&#x53EF;&#x4EE5;&#x5728;all&#x91CC;&#x9762;&#x8FDB;&#x884C;&#x6A21;&#x5757;&#x5D4C;&#x5957;&#xFF0C;&#x6216;&#x8005;&#x5C06;&#x8FD9;&#x4E2A;&#x51E0;&#x4E2A;&#x9875;&#x9762;&#x5F52;&#x7EB3;&#x5230;&#x4E00;&#x4E2A;&#x7236;&#x7EA7;&#x8DEF;&#x7531;&#x4E0B; &#xFF0C;&#x5728;&#x7236;&#x7EA7;&#x5B9E;&#x4F8B;&#x8FDB;&#x884C;&#x6A21;&#x5757;&#x60F0;&#x6027;&#x6CE8;&#x518C;&#x3002;</p>
+<pre><code>// home/index.js
+import all from &apos;../store/all.js&apos;;
+export default {
+    name: &apos;home&apos;,
+    computed:{
+        count(){
+            return this.$store.state.all.count
+        }
+    },
+    asyncData({ store}){
+        store.registerModule(&apos;all&apos;,all);
+        return store.dispatch(&apos;all/inc&apos;)
+    },
+    data() {
+        return {
+            activeIndex2: &apos;1&apos;,
+            show:false,
+            nav:[
+                {
+                    path:&apos;/home/vue&apos;,
+                    name:&apos;vue&apos;
+                },
+                {
+                    path:&apos;/home/vuex&apos;,
+                    name:&apos;vue-vuex&apos;
+                },
+                {
+                    path:&apos;/home/vueCli3&apos;,
+                    name:&apos;vue-cli3&apos;
+                },
+                {
+                    path:&apos;/home/vueSSR&apos;,
+                    name:&apos;vue ssr&apos;
+                }
+            ]
+        };
+    },
+    watch:{
+        $route:function(){
+            if(this.show){
+                this.show = false;
+            }
+            //&#x5207;&#x6362;&#x8DEF;&#x7531;&#x65F6;&#xFF0C;&#x8FDB;&#x884C;&#x81EA;&#x589E;
+            this.$store.dispatch(&apos;all/inc&apos;);
+        }
+    },
+    mounted() {
+        //&#x505A;&#x989D;&#x5916;&#x8BF7;&#x6C42;&#x65F6;,&#x5728;mounted&#x4E0B;&#x8FDB;&#x884C;
+
+    },
+    methods: {
+        user_info(){
+            this.http.post(&apos;/cms/i1/user_info&apos;).then(res=&gt; {
+                console.log(res.data);
+            }).catch( error =&gt; {
+                console.log(error)
+            })
+        }
+    },
+    destroyed(){
+        this.$store.unregisterModule(&apos;all&apos;)
+    }
+}
+
+
+`
+</code></pre><h4 id="&#x6570;&#x636E;&#x9884;&#x53D6;">&#x6570;&#x636E;&#x9884;&#x53D6;</h4>
+<pre><code>// store.config.js
+
+    //store&#x603B;&#x914D;&#x7F6E;
+    import Vue from &apos;vue&apos;;
+    import Vuex from &apos;vuex&apos;;
+
+    Vue.use(Vuex);
+
+
+    //&#x9884;&#x8BF7;&#x6C42;&#x6570;&#x636E;
+    function fetchApi(id){
+        //&#x8BE5;&#x51FD;&#x6570;&#x662F;&#x8FD0;&#x884C;&#x5728;node&#x73AF;&#x5883; &#x6240;&#x4EE5;&#x9700;&#x8981;&#x52A0;&#x4E0A;&#x57DF;&#x540D;
+        return axios.post(&apos;http://localhost:8080/cms/i1/user_info&apos;);
+    }
+    //&#x8FD4;&#x56DE; Vuex&#x5B9E;&#x4F8B; &#x907F;&#x514D;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x5355;&#x5229;&#x72B6;&#x6001;
+    export function createStore() {
+        return new Vuex.Store({
+            state:{
+                items:{}
+            },
+            actions: {
+                fetchItem ({commit}, id) {
+                    return fetchApi(id).then(item =&gt; {
+                        commit(&apos;setItem&apos;,{id, item})
+                    })
+                }
+            },
+            mutations: {
+                setItem(state, {id, item}){
+                    Vue.set(state.items, id, item.data)
+                }
+            }
+        })
+    }
+</code></pre><h4 id="mixin&#x76F8;&#x5173;">mixin&#x76F8;&#x5173;</h4>
+<p> &#x5728;src&#x4E0B;&#x65B0;&#x5EFA;&#x4E2A;methods &#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x8FD9;&#x91CC;&#x5B58;&#x653E;&#x5199;vue&#x7684;&#x5168;&#x5C40;&#x4EE3;&#x7801;&#x4EE5;&#x53CA;&#x914D;&#x7F6E;
+  &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x5B9E;&#x4F8B;</p>
+<pre><code>// src/methods/index.js
+
+import &apos;./mixin&apos;;
+import Vue from &apos;vue&apos;;
+import axios from &apos;axios&apos;;
+Vue.prototype.http = axios;
+
+// src/methods/mixin/index.js
+    import Vue from &apos;vue&apos;;
+    Vue.mixin({
+        beforeMount() {
+            const {
+                asyncData
+            } = this.$options;//&#x8FD9;&#x91CC; &#x81EA;&#x5DF1;&#x6253;&#x5370;&#x4E0B;&#x5C31;&#x77E5;&#x9053;&#x4E86;&#x3002;&#x5C31;&#x4E0D;&#x8FC7;&#x591A;&#x89E3;&#x91CA;&#x4E86;
+            //&#x5F53;&#x524D;&#x5B9E;&#x4F8B;&#x662F;&#x5426;&#x6709;&#x8BE5;&#x51FD;&#x6570;
+            if (asyncData) {
+               // &#x6709;&#x5C31;&#x6267;&#x884C;&#xFF0C;&#x5E76;&#x4F20;&#x5165;&#x76F8;&#x5E94;&#x7684;&#x53C2;&#x6570;&#x3002;
+                asyncData({
+                    store: this.$store,
+                    route: this.$route
+                })
+            }
+        }
+    })
+
+
+`
+</code></pre><p>main.js &#x65B0;&#x589E;&#x4EE3;&#x7801;</p>
+<pre><code>    import Vue from &apos;vue&apos;;
+    Vue.config.productionTip = false;
+    import VueRouter from &apos;vue-router&apos;;
+
+    import App from &apos;./App.vue&apos;;
++   import &apos;./methods&apos;;
+    //&#x540C;&#x6B65;&#x8DEF;&#x7531;&#x72B6;&#x6001;
++   import { sync } from &apos;vuex-router-sync&apos;;
+
+
+    import {
+        createRouter
+    } from &apos;./router.config.js&apos;;
+
++   import {
+        createStore
+    } from &apos;./store.config.js&apos;;
+
+    export function createApp() {
+
+        const router = createRouter()
+        const store = createStore()
+        //&#x540C;&#x6B65;&#x8DEF;&#x7531;&#x72B6;&#x6001;(route state)&#x5230; store
+        sync(store, router)
+        const app = new Vue({
+            router,
++           store,
+            render: h =&gt; h(App)
+        })
+        return {
+            app,
+            router,
++           store
+        };
+    }
+</code></pre><p><a href="https://github.com/AlanSean/vuessr" target="_blank">&#x9879;&#x76EE;github&#x5730;&#x5740;</a></p>
+<p><a href="https://adm.hqboke.cn/home/vueCli3" target="_blank">&#x9879;&#x76EE;&#x516C;&#x7F51;&#x5730;&#x5740;</a></p>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-11-28 16:07:15
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="vue-server-renderer.html" class="navigation navigation-prev " aria-label="Previous page: Vue Server Renderer">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="vue开发依赖的相关配置.html" class="navigation navigation-next " aria-label="Next page: Vue开发依赖的相关配置">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Vuex","level":"1.7.2","depth":2,"next":{"title":"Vue开发依赖的相关配置","level":"1.7.3","depth":2,"path":"6-vuessr从0开始/vue开发依赖的相关配置.md","ref":"6-vuessr从0开始/vue开发依赖的相关配置.md","articles":[]},"previous":{"title":"Vue Server Renderer","level":"1.7.1","depth":2,"path":"6-vuessr从0开始/vue-server-renderer.md","ref":"6-vuessr从0开始/vue-server-renderer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","-highlight","-livereload","search-plus","github","github-buttons","include-codeblock","emphasize","tbfed-pagefooter","favicon","-sharing","sharing-plus","graph","chart","theme-comscore","pageview-count"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/AlanSean/book"},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"graph":{},"sitemap-general":{"prefix":"http://gitbook.hqboke.com"},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"theme-comscore":{},"pageview-count":{},"github-buttons":{"repo":"AlanSean/book","types":["star"],"size":"small"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":true},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"miao","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"book","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"//www.hqboke.cn"}},"gitbook":"3.2.3","description":"记录杂学,nginx,http2,https,serviceWorker,javascript,html,Vue,react,webpack"},"file":{"path":"6-vuessr从0开始/vuex.md","mtime":"2019-11-28T08:07:15.896Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-25T02:57:55.904Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

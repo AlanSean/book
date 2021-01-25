@@ -1,0 +1,933 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Unicode转UTF16与UTF8 · book</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="miao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="字节算法准备基础.html" />
+    
+    
+    <link rel="prev" href="UTF-16和UTF-8转Unicode.html" />
+    
+
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    <script src="../gitbook/gitbook-plugin-graph/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-graph/function-plot.js"></script>    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"AlanSean/book","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="//www.hqboke.cn" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1-clutter/">
+            
+                <a href="../1-clutter/">
+            
+                    
+                    Clutter
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1-clutter/gather.html">
+            
+                <a href="../1-clutter/gather.html">
+            
+                    
+                    Gather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1-clutter/serviceWorker配置.html">
+            
+                <a href="../1-clutter/serviceWorker配置.html">
+            
+                    
+                    ServiceWorker配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../2-ios调试/">
+            
+                <a href="../2-ios调试/">
+            
+                    
+                    Ios调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3-javascript记录/">
+            
+                <a href="../3-javascript记录/">
+            
+                    
+                    Javascript记录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3-javascript记录/浅拷贝与深拷贝.html">
+            
+                <a href="../3-javascript记录/浅拷贝与深拷贝.html">
+            
+                    
+                    浅拷贝与深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../4-linux/">
+            
+                <a href="../4-linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../4-linux/git安装.html">
+            
+                <a href="../4-linux/git安装.html">
+            
+                    
+                    Git安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../4-linux/http2升级.html">
+            
+                <a href="../4-linux/http2升级.html">
+            
+                    
+                    Http2升级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../4-linux/lnmp/README.md">
+            
+                <span>
+            
+                    
+                    Lnmp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../4-linux/lnmp/安装.html">
+            
+                <a href="../4-linux/lnmp/安装.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../4-linux/mongoDB.html">
+            
+                <a href="../4-linux/mongoDB.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../4-linux/mysql.html">
+            
+                <a href="../4-linux/mysql.html">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../4-linux/nginx.html">
+            
+                <a href="../4-linux/nginx.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../4-linux/node安装.html">
+            
+                <a href="../4-linux/node安装.html">
+            
+                    
+                    Node安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../4-linux/nvm.html">
+            
+                <a href="../4-linux/nvm.html">
+            
+                    
+                    Nvm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../4-linux/命令.html">
+            
+                <a href="../4-linux/命令.html">
+            
+                    
+                    命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../4-linux/外网问题.html">
+            
+                <a href="../4-linux/外网问题.html">
+            
+                    
+                    外网问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../5-puppeteer/">
+            
+                <a href="../5-puppeteer/">
+            
+                    
+                    Puppeteer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../5-puppeteer/安装.html">
+            
+                <a href="../5-puppeteer/安装.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../6-vuessr从0开始/">
+            
+                <a href="../6-vuessr从0开始/">
+            
+                    
+                    Vuessr从0开始
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../6-vuessr从0开始/vue-server-renderer.html">
+            
+                <a href="../6-vuessr从0开始/vue-server-renderer.html">
+            
+                    
+                    Vue Server Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../6-vuessr从0开始/vuex.html">
+            
+                <a href="../6-vuessr从0开始/vuex.html">
+            
+                    
+                    Vuex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../6-vuessr从0开始/vue开发依赖的相关配置.html">
+            
+                <a href="../6-vuessr从0开始/vue开发依赖的相关配置.html">
+            
+                    
+                    Vue开发依赖的相关配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../6-vuessr从0开始/伪热更新.html">
+            
+                <a href="../6-vuessr从0开始/伪热更新.html">
+            
+                    
+                    伪热更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../6-vuessr从0开始/准备.html">
+            
+                <a href="../6-vuessr从0开始/准备.html">
+            
+                    
+                    准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../6-vuessr从0开始/开发环境的部署.html">
+            
+                <a href="../6-vuessr从0开始/开发环境的部署.html">
+            
+                    
+                    开发环境的部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../6-vuessr从0开始/开始.html">
+            
+                <a href="../6-vuessr从0开始/开始.html">
+            
+                    
+                    开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    WebSocket二进制数据传输
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="UTF-16和UTF-8转Unicode.html">
+            
+                <a href="UTF-16和UTF-8转Unicode.html">
+            
+                    
+                    UTF 16和UTF 8转Unicode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.2" data-path="Unicode转UTF16与UTF8.html">
+            
+                <a href="Unicode转UTF16与UTF8.html">
+            
+                    
+                    Unicode转UTF16与UTF8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="字节算法准备基础.html">
+            
+                <a href="字节算法准备基础.html">
+            
+                    
+                    字节算法准备基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../8-随便写写/">
+            
+                <a href="../8-随便写写/">
+            
+                    
+                    随便写写
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../8-随便写写/Browserslist详解.html">
+            
+                <a href="../8-随便写写/Browserslist详解.html">
+            
+                    
+                    Browserslist详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../8-随便写写/element-ui.html">
+            
+                <a href="../8-随便写写/element-ui.html">
+            
+                    
+                    Element Ui
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../8-随便写写/git.html">
+            
+                <a href="../8-随便写写/git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Unicode转UTF16与UTF8</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x524D;&#x8A00;">&#x524D;&#x8A00;</h2>
+<p>&#x4ECA;&#x5929;&#x5B66;&#x4E60;&#x4E00;&#x4E0B;&#x7F16;&#x7801;&#xFF0C;&#x5148;&#x56DE;&#x987E;&#x4E00;&#x4E0B;&#x6628;&#x5929;&#x7684;<a href="https://segmentfault.com/a/1190000018737922?_ea=9155376" target="_blank">&#x57FA;&#x7840;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</a>&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x8FDB;&#x884C;&#x4E86;&#x89E3;UTF-8&#x4E0E;UTF-16&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x4E3A;&#x5565;&#x8981;&#x4E86;&#x89E3;&#x8FD9;&#x4E2A;&#xFF0C;&#x56E0;&#x4E3A;js&#x4E2D;&#x6240;&#x6709;&#x662F;string&#x7C7B;&#x578B;&#x90FD;&#x662F;&#x4F7F;&#x7528;UTF-16&#x7F16;&#x7801;&#x7684;</p>
+<p>&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x4E0E;&#x540E;&#x7AEF;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x8F6C;&#x6362;&#x6210;&#x4E0E;&#x4E4B;&#x4E00;&#x81F4;&#x7684;&#x7F16;&#x7801;&#x3002;&#xFF08;&#x540E;&#x7AEF;&#x6216;&#x8005;&#x524D;&#x7AEF;&#x8F6C;&#x6362;&#xFF09;</p>
+<h2 id="utf-8&#x7F16;&#x7801;&#x65B9;&#x5F0F;">UTF-8&#x7F16;&#x7801;&#x65B9;&#x5F0F;</h2>
+<p><strong>&#x6CE8;</strong>:  </p>
+<pre><code> 1.  Unicode&#x7801;&#x8303;&#x56F4; &#x7528;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x8868;&#x793A;
+ 3.  8&#x4F4D;&#x4E8C;&#x8FDB;&#x5236;&#x4E3A;&#x4E00;&#x5B57;&#x8282;
+</code></pre><table>
+<thead>
+<tr>
+<th style="text-align:left">Unicode&#x7801;&#x8303;&#x56F4;</th>
+<th style="text-align:left">UTF-8&#x7F16;&#x7801;&#x65B9;&#x5F0F;</th>
+<th style="text-align:center">&#x5360;&#x7528;&#x5B57;&#x8282;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">U+0000 ~ U+007F</td>
+<td style="text-align:left">0xxxxxxx</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:left">U+0080 ~ U+ 07FF</td>
+<td style="text-align:left">110xxxxx  10xxxxxx</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:left">U+0800 ~ U+FFFF</td>
+<td style="text-align:left">1110xxxx 10xxxxxx 10xxxxxx</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:left">U+10000 ~ U+10FFFF</td>
+<td style="text-align:left">11110xxx 10xxxxxxx 10xxxxxx 10xxxxxx</td>
+<td style="text-align:center">4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unicode&#x7801;&#x8F6C;&#x6362;utf-8">Unicode&#x7801;&#x8F6C;&#x6362;UTF-8</h3>
+<p><a href="https://baike.baidu.com/item/Unicode/750500?fr=aladdin#11" target="_blank">Unicode&#x7F16;&#x7801;&#x8868;</a>
+&#x4F7F;&#x7528;&#xFF0C;&#x8F6C;&#x6362;&#x5230;UTF-8&#x7F16;&#x7801;
+&#x5728;Unicode&#x4E2D;&#x6C49;&#x5B57; &#x201C;&#x4E00;&#x201D;&#x7F16;&#x7801;&#x4E3A;U+4E00,&quot;&#x4E01;&quot;&#x7F16;&#x7801;&#x4E3A; U+4E01&#x8FD9;&#x6837;&#x60F3;&#x5FC5;&#x5C31;&#x770B;&#x5F97;&#x61C2;&#x8868;&#x4E86;
+&#x4E0B;&#x9762;&#x8FDB;&#x884C;&#x5F00;&#x59CB;&#x8F6C;&#x6362;&#x5427;
+<a href="https://segmentfault.com/a/1190000018737922?_ea=9155376" target="_blank">&#x56DE;&#x987E;&#x6628;&#x65E5;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x4E0E;&#x5341;&#x516D;&#x8FDB;&#x5236;</a></p>
+<pre><code>U+4E00&#x7528;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x8868;&#x793A; 0x4E00
+&#x8F6C;&#x6362;&#x4E8C;&#x8FDB;&#x5236;&#xFF0C;&#x6309;&#x4F4D;&#x8F6C;&#x6362;
+4 = 0011
+E = 14 = 1110
+0 = 0000
+0 = 0000
+0x4E00 = 0100 1110 0000 0000 = 19968
+0x0800&lt; 0x4E00 &lt; 0xFFFF &#x5F97;&#x51FA;&#x662F;&#x4E09;&#x4E2A;&#x5B57;&#x8282;&#x3002;
+UTF-8&#x4E09;&#x5B57;&#x8282;&#x7684;&#x7F16;&#x7801;&#x65B9;&#x5F0F;
+&#x4ECE; 0100 1110 0000 0000 &#x53D8;&#x6210; 1110 xxxx 10 xxxxxx 10 xxxxxx&#x683C;&#x5F0F;
+&#x7531;&#x4ECE;&#x672B;&#x4F4D;&#x5230;&#x9996;&#x4F4D;&#x8FDB;&#x884C;&#x987A;&#x4F4D;&#x63D2;&#x5165;&#x7684;&#x65B9;&#x5F0F;
+     0100    111000    000000
+1110 xxxx 10 xxxxxx 10 xxxxxx
+1110 0100 10 111000 10 000000
+
+&#x5176;&#x4E2D;&#x5229;&#x7528;js&#x7684;&#x6309;&#x4F4D;&#x64CD;&#x4F5C;&#x7B26; &#x7B26;&#x53F7;&#x64CD;&#x4F5C;&#x7B26;&#x8FDB;&#x884C;&#x8F6C;&#x6362;
+&#x5148;&#x66FF;&#x6362;&#x539F;&#x7801;(&#x4ECE;&#x672B;&#x4F4D;&#x5230;&#x9996;&#x4F4D;)&#x7684;&#x7B2C;7&#x4F4D;8&#x4F4D;
+&#x7B2C;&#x4E00;&#x5B57;&#x8282;
+utf-8 3&#x5B57;&#x8282;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x5B57;&#x8282;&#x683C;&#x5F0F; &#x4E3A; 10 xxxxxx&#x6240;&#x6709;&#x622A;&#x53D6;6&#x4F4D;(&#x539F;&#x7801;&#x4E0E;&#x7F16;&#x7801;&#x5BF9;&#x5E94;&#x7684; &#x4E3A;x&#x7684;&#x4F4D;&#x503C;&#xFF0C;&#x8981;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;, &#x7F16;&#x7801;&#x5176;&#x4E2D;&#x7684;x&#x4F4D;&#x503C;&#x5168;&#x90E8;&#x4E3A;&#x539F;&#x7801;)
+
+&#x5148;&#x5229;&#x7528;&#x6309;&#x4F4D;&#x4E0E;&#x7684;&#x7279;&#x6027;(&#x5168;1&#x4E3A;1 &#x5426;&#x5219;&#x4E3A;0)&#x8FDB;&#x884C;&#x622A;&#x53D6;&#x539F;&#x7801;&#x7684;&#x672B;6&#x4F4D;
+
+&#x4E8C;&#x8FDB;&#x5236; 111111 = 63&#x5341;&#x8FDB;&#x5236;
+
+0100 1110 0000 0000 &amp; 0000 0000 0011 1111 = 000000
+19968 &amp; 63  =  000000
+
+UTF-8&#x7684;&#x7B2C;&#x4E00;&#x5B57;&#x8282;&#x683C;&#x5F0F;&#x4E3A; 10 xxxxxx&#x6240;&#x4EE5;&#x5229;&#x7528;&#x6309;&#x4F4D;&#x6216;&#x7684;&#x7279;&#x6027;(&#x9047;1&#x4E3A;1,&#x5168;0 &#x4E3A;0)&#x6765;&#x53D8;&#x6362;UTF-8 3&#x5B57;&#x8282;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x7684;&#x7F16;&#x7801;&#x65B9;&#x5F0F;
+&#x5C06;x&#x66FF;&#x4EE3;&#x4E3A;0 &#x5F97;&#x51FA; 10 000000
+&#x4E8C;&#x8FDB;&#x5236; 10 000000 = 128;
+&#x6309;&#x4F4D;&#x6216;
+00 000000 | 10 000000 = 10 000000
+0 | 128 = 128
+
+&#x7B2C;&#x4E8C;&#x4E2A;&#x5B57;&#x8282;
+UTF-8 3&#x5B57;&#x8282;&#x4E2D;&#x7684;&#x7B2C;&#x4E8C;&#x5B57;&#x8282;&#x4F9D;&#x7136;&#x662F;10 xxxxxx&#x683C;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x9700;&#x8981;&#x4ECE;&#x7B2C;6&#x4F4D;&#x5F00;&#x59CB;&#x8FDB;&#x884C;&#x622A;&#x53D6;6&#x4F4D;
+&#x5229;&#x7528;&#x5E26;&#x7B26;&#x53F7;&#x53F3;&#x79FB;&#x64CD;&#x4F5C;&#x7B26; a &gt;&gt; b  &#x9996;&#x4F4D;&#x5F00;&#x59CB;&#x8865; b &#x4E2A; &#x9996;&#x4F4D;&#x503C;  &#x53F3;&#x4FA7;&#x820D;&#x53BB;b&#x4E2A;&#x4F4D;
+&#x5148;&#x820D;&#x53BB;&#x672B;6&#x4F4D;
+0100 1110 0000 0000 &gt;&gt; 6 = 000 000 0100 1110 00
+19968 &gt;&gt; 6 = 312
+
+&#x5229;&#x7528;&#x6309;&#x4F4D;&#x4E0E;&#x8FDB;&#x884C;&#x622A;&#x53D6;
+000 000 0100 1110 00 &amp; 111111  = 111 000
+312 &amp; 63 = 56
+
+&#x7EE7;&#x7EED;&#x5229;&#x7528;&#x6309;&#x4F4D;&#x6216;&#x8FDB;&#x884C;&#x53D8;&#x6362;
+00 111000 | 10 000000 = 10 111000
+56 | 128 = 184
+
+&#x7B2C;&#x4E09;&#x5B57;&#x8282;
+utf-8 3&#x5B57;&#x8282;&#x7684;&#x7B2C;&#x4E09;&#x5B57;&#x8282;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#x4E3A; 1110 xxxx &#x6240;&#x4EE5;&#x53EA;&#x9700;&#x8981;&#x4ECE;&#x7B2C;12&#x5F00;&#x59CB;&#x622A;&#x53D6;4&#x4F4D;
+&#x4ECE;&#x672B;&#x4F4D;&#x7B2C;12&#x4F4D;&#x5F00;&#x59CB;&#x622A;&#x53D6;4&#x4F4D;&#xFF0C;&#x5229;&#x7528;&#x5E26;&#x7B26;&#x53F7;&#x53F3;&#x79FB;&#x64CD;&#x4F5C;&#x7B26; a &gt;&gt; b  &#x9996;&#x4F4D;&#x5F00;&#x59CB;&#x8865; b &#x4E2A; &#x9996;&#x4F4D;&#x503C;  &#x53F3;&#x4FA7;&#x820D;&#x53BB;b&#x4E2A;&#x4F4D;
+0100 1110 0000 0000 &gt;&gt; 12 = 000 000 0000 0100
+19968 &gt;&gt; 12 = 4
+&#x5229;&#x7528;&#x6309;&#x4F4D;&#x4E0E;&#x8FDB;&#x884C;&#x622A;&#x53D6; 4&#x4F4D;
+&#x4E8C;&#x8FDB;&#x5236; 1111 = 15
+0100 &amp; 1111 = 0100
+4 &amp; 15 = 4;
+&#x5229;&#x7528;&#x6309;&#x4F4D;&#x6216;&#x8FDB;&#x884C;&#x53D8;&#x6362;
+&#x4E8C;&#x8FDB;&#x5236; 1110 0000 = 224
+0000 0100 | 1110 0000 =  1110 0100
+4 | 224 = 228
+
+&#x4E09;&#x4E2A;&#x5B57;&#x8282;&#x7EC4;&#x5408;&#x8D77;&#x6765;
+228 184 128  = 1110 0100 1011 1000 1000 0000 = 14 4 11 8 8 0
+utf-16&#x8F6C;utf-8
+0x4E00 = 0xe4b880
+
+python&#x7F16;&#x7801;&#x8F6C;&#x6362;
+b&apos;\xe4\xb8\x80&apos;.decode(&apos;utf-8&apos;) = &quot;&#x4E00;&quot;
+</code></pre><footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-11-28 16:07:15
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="UTF-16和UTF-8转Unicode.html" class="navigation navigation-prev " aria-label="Previous page: UTF 16和UTF 8转Unicode">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="字节算法准备基础.html" class="navigation navigation-next " aria-label="Next page: 字节算法准备基础">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Unicode转UTF16与UTF8","level":"1.8.2","depth":2,"next":{"title":"字节算法准备基础","level":"1.8.3","depth":2,"path":"7-webSocket二进制数据传输/字节算法准备基础.md","ref":"7-webSocket二进制数据传输/字节算法准备基础.md","articles":[]},"previous":{"title":"UTF 16和UTF 8转Unicode","level":"1.8.1","depth":2,"path":"7-webSocket二进制数据传输/UTF-16和UTF-8转Unicode.md","ref":"7-webSocket二进制数据传输/UTF-16和UTF-8转Unicode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","-highlight","-livereload","search-plus","github","github-buttons","include-codeblock","emphasize","tbfed-pagefooter","favicon","-sharing","sharing-plus","graph","chart","theme-comscore","pageview-count"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/AlanSean/book"},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"graph":{},"sitemap-general":{"prefix":"http://gitbook.hqboke.com"},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"theme-comscore":{},"pageview-count":{},"github-buttons":{"repo":"AlanSean/book","types":["star"],"size":"small"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":true},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"miao","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"book","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"//www.hqboke.cn"}},"gitbook":"3.2.3","description":"记录杂学,nginx,http2,https,serviceWorker,javascript,html,Vue,react,webpack"},"file":{"path":"7-webSocket二进制数据传输/Unicode转UTF16与UTF8.md","mtime":"2019-11-28T08:07:15.902Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-25T02:57:55.904Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

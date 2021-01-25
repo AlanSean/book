@@ -1,0 +1,851 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Browserslist详解 · book</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="miao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="element-ui.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    <script src="../gitbook/gitbook-plugin-graph/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-graph/function-plot.js"></script>    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"AlanSean/book","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="//www.hqboke.cn" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1-clutter/">
+            
+                <a href="../1-clutter/">
+            
+                    
+                    Clutter
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1-clutter/gather.html">
+            
+                <a href="../1-clutter/gather.html">
+            
+                    
+                    Gather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1-clutter/serviceWorker配置.html">
+            
+                <a href="../1-clutter/serviceWorker配置.html">
+            
+                    
+                    ServiceWorker配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../2-ios调试/">
+            
+                <a href="../2-ios调试/">
+            
+                    
+                    Ios调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3-javascript记录/">
+            
+                <a href="../3-javascript记录/">
+            
+                    
+                    Javascript记录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3-javascript记录/浅拷贝与深拷贝.html">
+            
+                <a href="../3-javascript记录/浅拷贝与深拷贝.html">
+            
+                    
+                    浅拷贝与深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../4-linux/">
+            
+                <a href="../4-linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../4-linux/git安装.html">
+            
+                <a href="../4-linux/git安装.html">
+            
+                    
+                    Git安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../4-linux/http2升级.html">
+            
+                <a href="../4-linux/http2升级.html">
+            
+                    
+                    Http2升级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../4-linux/lnmp/README.md">
+            
+                <span>
+            
+                    
+                    Lnmp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../4-linux/lnmp/安装.html">
+            
+                <a href="../4-linux/lnmp/安装.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../4-linux/mongoDB.html">
+            
+                <a href="../4-linux/mongoDB.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../4-linux/mysql.html">
+            
+                <a href="../4-linux/mysql.html">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../4-linux/nginx.html">
+            
+                <a href="../4-linux/nginx.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../4-linux/node安装.html">
+            
+                <a href="../4-linux/node安装.html">
+            
+                    
+                    Node安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../4-linux/nvm.html">
+            
+                <a href="../4-linux/nvm.html">
+            
+                    
+                    Nvm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../4-linux/命令.html">
+            
+                <a href="../4-linux/命令.html">
+            
+                    
+                    命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../4-linux/外网问题.html">
+            
+                <a href="../4-linux/外网问题.html">
+            
+                    
+                    外网问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../5-puppeteer/">
+            
+                <a href="../5-puppeteer/">
+            
+                    
+                    Puppeteer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../5-puppeteer/安装.html">
+            
+                <a href="../5-puppeteer/安装.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../6-vuessr从0开始/">
+            
+                <a href="../6-vuessr从0开始/">
+            
+                    
+                    Vuessr从0开始
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../6-vuessr从0开始/vue-server-renderer.html">
+            
+                <a href="../6-vuessr从0开始/vue-server-renderer.html">
+            
+                    
+                    Vue Server Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../6-vuessr从0开始/vuex.html">
+            
+                <a href="../6-vuessr从0开始/vuex.html">
+            
+                    
+                    Vuex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../6-vuessr从0开始/vue开发依赖的相关配置.html">
+            
+                <a href="../6-vuessr从0开始/vue开发依赖的相关配置.html">
+            
+                    
+                    Vue开发依赖的相关配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../6-vuessr从0开始/伪热更新.html">
+            
+                <a href="../6-vuessr从0开始/伪热更新.html">
+            
+                    
+                    伪热更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../6-vuessr从0开始/准备.html">
+            
+                <a href="../6-vuessr从0开始/准备.html">
+            
+                    
+                    准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../6-vuessr从0开始/开发环境的部署.html">
+            
+                <a href="../6-vuessr从0开始/开发环境的部署.html">
+            
+                    
+                    开发环境的部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../6-vuessr从0开始/开始.html">
+            
+                <a href="../6-vuessr从0开始/开始.html">
+            
+                    
+                    开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../7-WebSocket二进制数据传输/">
+            
+                <a href="../7-WebSocket二进制数据传输/">
+            
+                    
+                    WebSocket二进制数据传输
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../7-webSocket二进制数据传输/UTF-16和UTF-8转Unicode.html">
+            
+                <a href="../7-webSocket二进制数据传输/UTF-16和UTF-8转Unicode.html">
+            
+                    
+                    UTF 16和UTF 8转Unicode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../7-webSocket二进制数据传输/Unicode转UTF16与UTF8.html">
+            
+                <a href="../7-webSocket二进制数据传输/Unicode转UTF16与UTF8.html">
+            
+                    
+                    Unicode转UTF16与UTF8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../7-webSocket二进制数据传输/字节算法准备基础.html">
+            
+                <a href="../7-webSocket二进制数据传输/字节算法准备基础.html">
+            
+                    
+                    字节算法准备基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    随便写写
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.9.1" data-path="Browserslist详解.html">
+            
+                <a href="Browserslist详解.html">
+            
+                    
+                    Browserslist详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="element-ui.html">
+            
+                <a href="element-ui.html">
+            
+                    
+                    Element Ui
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="git.html">
+            
+                <a href="git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Browserslist详解</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x67E5;&#x8BE2;&#x7F51;&#x5740;">&#x67E5;&#x8BE2;&#x7F51;&#x5740;</h3>
+<p>(<a href="https://browserl.ist/" target="_blank">https://browserl.ist/</a>)</p>
+<h3 id="browserslist&#x914D;&#x5408;&#x7684;&#x63D2;&#x4EF6;">Browserslist&#x914D;&#x5408;&#x7684;&#x63D2;&#x4EF6;</h3>
+<pre><code>Autoprefixer
+Babel
+postcss-preset-env
+eslint-plugin-compat
+stylelint-no-unsupported-browser-features
+postcss-normalize
+</code></pre><h3 id="&#x6D4F;&#x89C8;&#x5668;&#x5217;&#x8868;">&#x6D4F;&#x89C8;&#x5668;&#x5217;&#x8868;</h3>
+<pre><code>&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x67E5;&#x8BE2;&#x6307;&#x5B9A;&#x6D4F;&#x89C8;&#x5668;&#x548C;Node.js&#x7248;&#x672C;&#xFF08;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#xFF09;&#xFF1A;
+&gt; 5%&#xFF1A;&#x5168;&#x7403;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x7EDF;&#x8BA1;&#x9009;&#x62E9;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x7248;&#x672C;&#x3002; &gt;=&#xFF0C;&lt;&#x4E5F;&lt;=&#x5DE5;&#x4F5C;&#x3002;
+&gt; 5% in US&#xFF1A;&#x4F7F;&#x7528;&#x7F8E;&#x56FD;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x7EDF;&#x8BA1;&#x3002;&#x5B83;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x5B57;&#x6BCD;&#x7684;&#x56FD;&#x5BB6;/&#x5730;&#x533A;&#x4EE3;&#x7801;&#x3002;
+&gt; 5% in alt-AS&#xFF1A;&#x4F7F;&#x7528;&#x4E9A;&#x6D32;&#x5730;&#x533A;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x7EDF;&#x8BA1;&#x3002;&#x53EF;&#x5728;&#x4EE5;&#x4E0B;&#x4F4D;&#x7F6E;&#x627E;&#x5230;&#x6240;&#x6709;&#x5730;&#x533A;&#x4EE3;&#x7801;&#x7684;&#x5217;&#x8868;caniuse-lite/data/regions&#x3002;
+&gt; 5% in my stats&#xFF1A;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x3002;
+cover 99.5%&#xFF1A;&#x63D0;&#x4F9B;&#x8986;&#x76D6;&#x7684;&#x6700;&#x6D41;&#x884C;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x3002;
+cover 99.5% in US&#xFF1A;&#x4E0E;&#x4E0A;&#x8FF0;&#x76F8;&#x540C;&#xFF0C;&#x4F7F;&#x7528;&#x53CC;&#x5B57;&#x6BCD;&#x56FD;&#x5BB6;&#x4EE3;&#x7801;&#x3002;
+cover 99.5% in my stats&#xFF1A;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x3002;
+maintained node versions&#xFF1A;&#x6240;&#x6709;Node.js&#x7248;&#x672C;&#xFF0C;&#x4ECD;&#x7531; Node.js Foundation &#x7EF4;&#x62A4;&#x3002;
+node 10&#x548C;node 10.4&#xFF1A;&#x9009;&#x62E9;&#x6700;&#x65B0;&#x7684;Node.js 10.x.x &#x6216;10.4.x&#x53D1;&#x5E03;&#x3002;
+current node&#xFF1A;Browserslist&#x76EE;&#x524D;&#x4F7F;&#x7528;&#x7684;Node.js&#x7248;&#x672C;&#x3002;
+extends browserslist-config-mycompany&#xFF1A;&#x4ECE;browserslist-config-mycompanynpm&#x5305;&#x4E2D;&#x83B7;&#x53D6;&#x67E5;&#x8BE2; &#x3002;
+ie 6-8&#xFF1A;&#x9009;&#x62E9;&#x5305;&#x542B;&#x8303;&#x56F4;&#x7684;&#x7248;&#x672C;&#x3002;
+Firefox &gt; 20&#xFF1A;Firefox&#x7684;&#x7248;&#x672C;&#x6BD4;20&#x66F4;&#x65B0; &gt;=&#xFF0C;&lt;&#x5E76;&#x4E14;&#x4E5F;&#x53EF;&#x4EE5;&lt;=&#x5DE5;&#x4F5C;&#x3002;
+iOS 7&#xFF1A;iOS&#x6D4F;&#x89C8;&#x5668;&#x7248;&#x672C;7&#x76F4;&#x63A5;&#x3002;
+Firefox ESR&#xFF1A;&#x6700;&#x65B0;&#x7684;[Firefox ESR]&#x7248;&#x672C;&#x3002;
+unreleased versions&#x6216;unreleased Chrome versions&#xFF1A;alpha&#x548C;beta&#x7248;&#x672C;&#x3002;
+last 2 major versions&#x6216;last 2 iOS major versions&#xFF1A;&#x6700;&#x8FD1;2&#x4E2A;&#x4E3B;&#x8981;&#x7248;&#x672C;&#x7684;&#x6240;&#x6709;&#x6B21;&#x8981;/&#x8865;&#x4E01;&#x7248;&#x672C;&#x3002;
+since 2015&#x6216;last 2 years&#xFF1A;&#x81EA;2015&#x5E74;&#x4EE5;&#x6765;&#x53D1;&#x5E03;&#x7684;&#x6240;&#x6709;&#x7248;&#x672C;&#xFF08;&#x4E5F;since 2015-03&#x548C;since 2015-03-10&#xFF09;&#x3002;
+dead&#xFF1A;&#x6765;&#x81EA;last 2 version&#x67E5;&#x8BE2;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x4F46;&#x5168;&#x7403;&#x4F7F;&#x7528;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x5C11;&#x4E8E;0.5&#xFF05;&#xFF0C;&#x4E14;24&#x4E2A;&#x6708;&#x5185;&#x6CA1;&#x6709;&#x5B98;&#x65B9;&#x652F;&#x6301;&#x6216;&#x66F4;&#x65B0;&#x3002;&#x73B0;&#x5728;&#x662F;IE 10&#xFF0C;IE_Mob 10&#xFF0C;BlackBerry 10&#xFF0C; BlackBerry 7&#xFF0C;&#x548C;OperaMobile 12.1&#x3002;
+last 2 versions&#xFF1A;&#x6BCF;&#x4E2A;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x6700;&#x540E;&#x4E24;&#x4E2A;&#x7248;&#x672C;&#x3002;
+last 2 Chrome versions&#xFF1A;Chrome&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x6700;&#x540E;&#x4E24;&#x4E2A;&#x7248;&#x672C;&#x3002;
+defaults&#xFF1A;Browserslist&#x7684;&#x9ED8;&#x8BA4;&#x6D4F;&#x89C8;&#x5668;&#xFF08;&gt; 0.5%, last 2 versions, Firefox ESR, not dead&#xFF09;&#x3002;
+not ie &lt;= 8&#xFF1A;&#x6392;&#x9664;&#x5148;&#x524D;&#x67E5;&#x8BE2;&#x9009;&#x62E9;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x3002;
+</code></pre><footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2021-01-22 17:22:37
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 随便写写">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="element-ui.html" class="navigation navigation-next " aria-label="Next page: Element Ui">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Browserslist详解","level":"1.9.1","depth":2,"next":{"title":"Element Ui","level":"1.9.2","depth":2,"path":"8-随便写写/element-ui.md","ref":"8-随便写写/element-ui.md","articles":[]},"previous":{"title":"随便写写","level":"1.9","depth":1,"path":"8-随便写写/README.md","ref":"8-随便写写/README.md","articles":[{"title":"Browserslist详解","level":"1.9.1","depth":2,"path":"8-随便写写/Browserslist详解.md","ref":"8-随便写写/Browserslist详解.md","articles":[]},{"title":"Element Ui","level":"1.9.2","depth":2,"path":"8-随便写写/element-ui.md","ref":"8-随便写写/element-ui.md","articles":[]},{"title":"Git","level":"1.9.3","depth":2,"path":"8-随便写写/git.md","ref":"8-随便写写/git.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","-highlight","-livereload","search-plus","github","github-buttons","include-codeblock","emphasize","tbfed-pagefooter","favicon","-sharing","sharing-plus","graph","chart","theme-comscore","pageview-count"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/AlanSean/book"},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"graph":{},"sitemap-general":{"prefix":"http://gitbook.hqboke.com"},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"theme-comscore":{},"pageview-count":{},"github-buttons":{"repo":"AlanSean/book","types":["star"],"size":"small"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":true},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"miao","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"book","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"//www.hqboke.cn"}},"gitbook":"3.2.3","description":"记录杂学,nginx,http2,https,serviceWorker,javascript,html,Vue,react,webpack"},"file":{"path":"8-随便写写/Browserslist详解.md","mtime":"2021-01-22T09:22:37.220Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-25T02:57:55.904Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

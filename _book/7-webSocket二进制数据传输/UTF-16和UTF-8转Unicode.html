@@ -1,0 +1,993 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>UTF 16和UTF 8转Unicode · book</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="miao">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Unicode转UTF16与UTF8.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    <script src="../gitbook/gitbook-plugin-graph/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-graph/function-plot.js"></script>    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"AlanSean/book","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="//www.hqboke.cn" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../1-clutter/">
+            
+                <a href="../1-clutter/">
+            
+                    
+                    Clutter
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1-clutter/gather.html">
+            
+                <a href="../1-clutter/gather.html">
+            
+                    
+                    Gather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1-clutter/serviceWorker配置.html">
+            
+                <a href="../1-clutter/serviceWorker配置.html">
+            
+                    
+                    ServiceWorker配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../2-ios调试/">
+            
+                <a href="../2-ios调试/">
+            
+                    
+                    Ios调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3-javascript记录/">
+            
+                <a href="../3-javascript记录/">
+            
+                    
+                    Javascript记录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3-javascript记录/浅拷贝与深拷贝.html">
+            
+                <a href="../3-javascript记录/浅拷贝与深拷贝.html">
+            
+                    
+                    浅拷贝与深拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../4-linux/">
+            
+                <a href="../4-linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../4-linux/git安装.html">
+            
+                <a href="../4-linux/git安装.html">
+            
+                    
+                    Git安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../4-linux/http2升级.html">
+            
+                <a href="../4-linux/http2升级.html">
+            
+                    
+                    Http2升级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../4-linux/lnmp/README.md">
+            
+                <span>
+            
+                    
+                    Lnmp
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../4-linux/lnmp/安装.html">
+            
+                <a href="../4-linux/lnmp/安装.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../4-linux/mongoDB.html">
+            
+                <a href="../4-linux/mongoDB.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../4-linux/mysql.html">
+            
+                <a href="../4-linux/mysql.html">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../4-linux/nginx.html">
+            
+                <a href="../4-linux/nginx.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../4-linux/node安装.html">
+            
+                <a href="../4-linux/node安装.html">
+            
+                    
+                    Node安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../4-linux/nvm.html">
+            
+                <a href="../4-linux/nvm.html">
+            
+                    
+                    Nvm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../4-linux/命令.html">
+            
+                <a href="../4-linux/命令.html">
+            
+                    
+                    命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../4-linux/外网问题.html">
+            
+                <a href="../4-linux/外网问题.html">
+            
+                    
+                    外网问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../5-puppeteer/">
+            
+                <a href="../5-puppeteer/">
+            
+                    
+                    Puppeteer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../5-puppeteer/安装.html">
+            
+                <a href="../5-puppeteer/安装.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../6-vuessr从0开始/">
+            
+                <a href="../6-vuessr从0开始/">
+            
+                    
+                    Vuessr从0开始
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../6-vuessr从0开始/vue-server-renderer.html">
+            
+                <a href="../6-vuessr从0开始/vue-server-renderer.html">
+            
+                    
+                    Vue Server Renderer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../6-vuessr从0开始/vuex.html">
+            
+                <a href="../6-vuessr从0开始/vuex.html">
+            
+                    
+                    Vuex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../6-vuessr从0开始/vue开发依赖的相关配置.html">
+            
+                <a href="../6-vuessr从0开始/vue开发依赖的相关配置.html">
+            
+                    
+                    Vue开发依赖的相关配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../6-vuessr从0开始/伪热更新.html">
+            
+                <a href="../6-vuessr从0开始/伪热更新.html">
+            
+                    
+                    伪热更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../6-vuessr从0开始/准备.html">
+            
+                <a href="../6-vuessr从0开始/准备.html">
+            
+                    
+                    准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../6-vuessr从0开始/开发环境的部署.html">
+            
+                <a href="../6-vuessr从0开始/开发环境的部署.html">
+            
+                    
+                    开发环境的部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../6-vuessr从0开始/开始.html">
+            
+                <a href="../6-vuessr从0开始/开始.html">
+            
+                    
+                    开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    WebSocket二进制数据传输
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.8.1" data-path="UTF-16和UTF-8转Unicode.html">
+            
+                <a href="UTF-16和UTF-8转Unicode.html">
+            
+                    
+                    UTF 16和UTF 8转Unicode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="Unicode转UTF16与UTF8.html">
+            
+                <a href="Unicode转UTF16与UTF8.html">
+            
+                    
+                    Unicode转UTF16与UTF8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="字节算法准备基础.html">
+            
+                <a href="字节算法准备基础.html">
+            
+                    
+                    字节算法准备基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../8-随便写写/">
+            
+                <a href="../8-随便写写/">
+            
+                    
+                    随便写写
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../8-随便写写/Browserslist详解.html">
+            
+                <a href="../8-随便写写/Browserslist详解.html">
+            
+                    
+                    Browserslist详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../8-随便写写/element-ui.html">
+            
+                <a href="../8-随便写写/element-ui.html">
+            
+                    
+                    Element Ui
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../8-随便写写/git.html">
+            
+                <a href="../8-随便写写/git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >UTF 16和UTF 8转Unicode</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x524D;&#x8A00;">&#x524D;&#x8A00;</h1>
+<p>&#x4ECA;&#x5929;&#x6765;&#x5B66;&#x4E60;UTF8&#x8F6C;Unicode&#xFF0C;UTF16&#x8F6C;Unicode&#x4EE5;&#x8FBE;&#x6210;UTF8,UTF16&#x4E4B;&#x95F4;&#x7684;&#x4E92;&#x8F6C;&#x3002;
+&#x63D0;&#x70BC;&#x6210;&#x51FD;&#x6570;&#x7684;&#x516C;&#x5F0F;&#x6211;&#x5E76;&#x6CA1;&#x6709;&#x653E;&#x51FA;&#x6765;&#xFF0C;&#x6211;&#x7684;&#x76EE;&#x7684;&#x53EA;&#x662F;&#x4E3A;&#x4E86;&#x66F4;&#x52A0;&#x7406;&#x89E3; &#x5B57;&#x7B26;&#x7F16;&#x7801;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x3002;
+&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x8F6C;&#x7801;&#x65B9;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x627E;&#x5176;&#x4ED6;&#x7684;&#x5E93;&#xFF0C;&#x6216;&#x8005;&#x6839;&#x636E;&#x6211;&#x6587;&#x7AE0;&#x6765;&#x8FDB;&#x884C;&#x63D0;&#x70BC;&#x3002;
+&#x57FA;&#x672C;&#x5229;&#x7528;&#x6309;&#x4F4D;&#x64CD;&#x4F5C;&#x7B26; &#x7B26;&#x53F7;&#x8FD0;&#x7B97;&#x7B26;&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x3002;</p>
+<p>&#x4ECA;&#x5929;&#x8FD9;&#x91CC;&#x53EA;&#x505A;UTF8&#x8F6C;Unicode&#xFF0C;UTF16&#x8F6C;Unicode&#xFF0C; &#x540E;&#x7EED;&#x8F6C;&#x6362;&#x53EF;&#x4EE5;&#x770B;&#x524D;&#x9762;&#x7684;&#x6587;&#x7AE0;&#x3002;</p>
+<p><a href="https://juejin.im/post/5ca43ed2f265da30b3409645" target="_blank">1.&#x57FA;&#x7840;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</a>
+<a href="https://juejin.im/post/5ca5c689f265da30ca24a960" target="_blank">2.Unicode&#x8F6C;UTF16&#x548C;UTF8</a></p>
+<h2 id="utf16&#x8F6C;unicode">UTF16&#x8F6C;Unicode</h2>
+<p>&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x7406;&#x89E3;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x4F7F;&#x7528;&#x4E0A;&#x4E00;&#x671F;<a href="https://juejin.im/post/5ca5c689f265da30ca24a960#heading-4" target="_blank">Unicode&#x8F6C;UTF-16</a>&#x7684;&#x7ED3;&#x679C;
+&#x6765;&#x8FDB;&#x884C;UTF16&#x8F6C;Unicode&#xFF0C;U+22222&#x8F6C;UTF-16 = [0xd848,0xde22] = &apos;&#x22222;&apos;(&#x8FD9;&#x4E2A;&#x5B57;&#x7684;&#x957F;&#x5EA6;&#x4E3A;&#x4E8C;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x83B7;&#x53D6;&#x4ED6;&#x6240;&#x6709;&#x7684;charCodeAt)</p>
+<pre><code>function charCodeAt(str){
+
+    var length = str.length,
+        num = 0,
+        utf16Arr = [];
+
+    for(num; num &lt; length; num++){
+        utf16Arr[num] = &apos;0x&apos;+str[num].charCodeAt().toString(16);
+    }
+
+    return utf16Arr;
+}
+charCodeAt(&apos;&#x22222;&apos;);//[&apos;0xD848&apos;, &apos;0xDE22&apos;]
+</code></pre><h3 id="&#x8BA1;&#x7B97;utf-16-4&#x5B57;&#x8282;&#x7684;&#x53D6;&#x503C;&#x8303;&#x56F4;">&#x8BA1;&#x7B97;utf-16 4&#x5B57;&#x8282;&#x7684;&#x53D6;&#x503C;&#x8303;&#x56F4;</h3>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x83B7;&#x5F97;&#x4E86;&#xFF0C;&#x8FD9;&#x4E2A;&#x5B57;&#x7B26;&#x7684;UTF-16&#x7F16;&#x7801;&#x6570;&#x7EC4;&#xFF0C;JS&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5168;&#x90E8;&#x4F7F;&#x7528;&#x7684;UTF-16&#x7F16;&#x7801;&#x683C;&#x5F0F;
+&#x56DE;&#x987E;&#x4E00;&#x4E0B;UTF-16&#x7684;&#x7F16;&#x7801;&#x65B9;&#x5F0F;
+<strong>&#x5C06;Unicode&#x503C;&#x51CF;&#x53BB;0x10000,&#x5F97;&#x5230;20&#x4F4D;&#x957F;&#x7684;&#x503C;&#xFF0C;&#x518D;&#x5C06;&#x5176;&#x5206;&#x4E3A;&#x9AD8;10&#x4F4D;&#x548C;&#x4F4E;10&#x4F4D;&#xFF0C;&#x5206;&#x522B;&#x4E3A;2&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x9AD8;10&#x4F4D;&#x548C;&#x4F4E;10&#x4F4D;&#x7684;&#x8303;&#x56F4;&#x90FD;&#x5728; 0 ~ 0x3FF&#xFF0C;&#x9AD8;10&#x4F4D;&#x52A0;0xD800,&#x4F4E;&#x5341;&#x4F4D;&#x52A0;0xDC00</strong></p>
+<p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x5148;&#x770B;&#x5B57;&#x8282;&#x95EE;&#x9898;&#xFF0C;Unicode&#x503C;&#x5728;U+10000 ~ U+10FFFF&#x65F6;&#xFF0C;&#x4F1A;&#x5206;&#x4E3A; &#x4E24;&#x4E2A;2 &#x5B57;&#x8282;,&#x4E8C;&#x8FDB;&#x5236; 8&#x4F4D;&#x4E3A;&#x4E00;&#x4E2A;&#x5B57;&#x8282;,&#x6240;&#x4EE5;
+UTF-16&#x7684;&#x56DB;&#x4E2A;&#x5B57;&#x8282;&#x7684;&#x5B57;&#x7B26;&#x662F;&#x4E24;&#x4E2A; 16&#x4F4D;&#x7684;&#x4E8C;&#x8FDB;&#x5236;
+&#x5E76;&#x4E14;&#x6839;&#x636E;UTF-16&#x7684;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#x7684;&#x9AD8;&#x4F4D;&#x52A0;0xD800  &#x4F4E;&#x4F4D;&#x52A0;0xDC00&#x5F97;&#x51FA;&#x6700;&#x5C0F;&#x8303;&#x56F4;&#x503C;
+&#x9AD8;10&#x4F4D;&#x6700;&#x5C0F;&#x503C;&#x4E3A;0xD800&#xFF0C;&#x4F4E;10&#x4E3A;&#x6700;&#x5C0F;&#x503C;&#x4E3A;0xDC00
+&#x518D;&#x6839;&#x636E; &#x9AD8;10&#x4F4D;&#x548C;&#x4F4E;10&#x4F4D;&#x7684;&#x8303;&#x56F4;&#x90FD;&#x5728; 0 ~ 0x3FF&#x5F97;&#x51FA;&#x6700;&#x5927;&#x8303;&#x56F4;&#x503C;
+&#x9AD8;10&#x4F4D;&#x6700;&#x5927;&#x503C;&#x4E3A;0xD800+0x3FF&#xFF0C;&#x4F4E;10&#x4E3A;&#x6700;&#x5927;&#x503C;&#x4E3A;0xDC00+0x3FF</p>
+<p><strong>&#x6240;&#x4EE5;&#x9AD8;10&#x4F4D;&#x7684;&#x53D6;&#x503C;&#x8303;&#x56F4;&#x4E3A; 0xD800 ~ 0xdbff</strong>
+<strong>&#x4F4E;10&#x4F4D;&#x7684;&#x53D6;&#x503C;&#x8303;&#x56F4;&#x4E3A; &#x9AD8;10&#x4F4D;&#x7684;&#x53D6;&#x503C;&#x8303;&#x56F4;&#x4E3A; 0xDC00 ~ 0xdfff</strong></p>
+<p>&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5F97;&#x77E5;&#x4E86;UTF16&#x7F16;&#x7801;&#x7684;&#x9AD8;10&#x4F4D;&#x548C;&#x4F4E;10&#x4F4D;&#x7684;&#x53D6;&#x503C;&#x8303;&#x56F4;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x5224;&#x65AD; &#x662F;&#x5426;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x9006;&#x63A8;&#x8F6C;&#x6362;</p>
+<pre><code>var strCode = charCodeAt(&apos;&#x22222;&apos;),
+    strCode0 = strCode[0],
+    strCode1 = strCode[1];
+
+if(strCode0 &gt;= 0xD800 &amp;&amp; strCode0 &lt;= 0xDBFF){
+    if(strCode1 !=undefined &amp;&amp; strCode1 &gt;= 0xDC00 &amp;&amp; strCode1 &lt;= 0xDFFF){
+        //&#x5230;&#x4E86;&#x8FD9;&#x91CC;&#x8BF4;&#x660E;&#x8FD9;&#x4E2A;&#x5B57;&#x7B26;&#x662F;&#x56DB;&#x4E2A;&#x5B57;&#x8282;&#x5C31;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x8FDB;&#x884C;&#x9006;&#x63A8;&#x4E86;
+        //&#x9AD8;10&#x4F4D;&#x52A0;0xD800,&#x4F4E;&#x5341;&#x4F4D;&#x52A0;0xDC00&#xFF0C;&#x6240;&#x4EE5;&#x51CF;&#x53BB;
+        strCode0 = strCode0 - 0xD800 = 0xd848 - 0xD800  = 0x48 = 72;
+        strCode1 = strCode1 - 0xDC00 = 0xDE22 - 0xDC00 = 0x222 = 546;
+        //&#x9AD8;10&#x4F4D;&#x548C;&#x4F4E;10&#x4F4D;&#x8FDB;&#x884C;&#x62FC;&#x63A5;&#x3002; &#x5B57;&#x7B26;&#x4E32;&#x6216;&#x8005;&#x4E58;&#x6CD5;&#x90FD;&#x884C;
+
+        //1 &#x5B57;&#x7B26;&#x4E32;&#x7684;&#x65B9;&#x5F0F;&#x62FC;&#x63A5; &#x6211;&#x7528;&#x62BD;&#x8C61;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5C55;&#x73B0;&#x8FC7;&#x7A0B;
+        strCode0.toString(2)+strCode1.toString(2) = &apos;1001000&apos; + &apos;1000100010&apos; = &apos;10010001000100010&apos;
+        parseInt(Number(&apos;10010001000100010&apos;),2).toString(16)//74274 = 0x12222
+        //Unicode&#x8F6C;utf16&#x65F6; &#x5C06;Unicode&#x503C;&#x51CF;&#x53BB;0x10000&#xFF0C;&#x6240;&#x4EE5;&#x518D;&#x8FDB;&#x884C;&#x52A0;&#x6CD5;
+        0x12222 + 0x10000 = 0x22222; //&#x7B54;&#x6848;&#x662F;&#x4E0D;&#x662F;&#x6628;&#x5929;&#x9009;&#x62E9;&#x7684;&#x503C;&#x5462;
+
+        //2 &#x5229;&#x7528;&#x6570;&#x5B66;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x8F6C;&#x6362;
+        //&#x5148;&#x7ED9;&#x9AD8;10&#x4F4D;&#x4ECE;&#x672B;&#x4F4D;&#x8865;10&#x4E2A;0&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E58;&#x4EE5;10000000000(&#x4E8C;&#x8FDB;&#x5236;) = 0x400(16&#x8FDB;&#x5236;) = 1024(&#x5341;&#x8FDB;&#x5236;)
+        strCode0*0x400 = 0x48*0x400 = 1001000*10000000000 = 1001000 10000000000 = 0x12000
+        //&#x518D;&#x52A0;&#x4E0A;&#x51CF;&#x53BB;0xDC00&#x540E;&#x7684;&#x4F4E;10&#x4F4D;
+        0x12000+0x222 = 0x12222
+        //&#x52A0;&#x4E0A; Unicode&#x8F6C;utf16&#x65F6; &#x5C06;Unicode&#x503C;&#x51CF;&#x53BB;&#x7684;0x10000
+        0x12222+0x10000 = 0x22222;
+        //Unicode U+22222 = &apos;&#x22222;&apos;;
+        return;
+    }
+}
+//&#x4E0D;&#x6EE1;&#x8DB3;&#x4E0A;&#x9762;&#x6761;&#x4EF6;&#x65F6;&#xFF0C;&#x8BF4;&#x660E;UTF16&#x8F6C;Unicode &#x7B49;&#x4E8E;&#x539F;&#x503C;&#x3002;&#x4E0D;&#x61C2;&#x4E3A;&#x4EC0;&#x4E48;&#x5C31;&#x56DE;&#x987E;&#x4E0A;&#x671F;&#x7684;&#x8868;&#x683C;
+</code></pre><h2 id="utf8&#x8F6C;unicode">UTF8&#x8F6C;Unicode</h2>
+<p>&#x8FD9;&#x91CC;&#x4E00;&#x6837; &#x4F7F;&#x7528;<a href="https://juejin.im/post/5ca5c689f265da30ca24a960#heading-2" target="_blank">&#x4E0A;&#x671F;</a>&#x4F8B;&#x5B50;&#x8FD0;&#x7B97;&#x51FA;&#x7684;&#x7ED3;&#x679C;[0xe4, 0xb8,0x80]&#x8FDB;&#x884C;&#x8F6C;&#x6362;</p>
+<p>&#x7531;&#x4E8E;JS&#x73AF;&#x5883;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x662F;UTF16&#x7F16;&#x7801;&#x6240;&#x4EE5;&#x6211;&#x8FD9;&#x91CC;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x4E32;&#x6765;&#x8FDB;&#x884C;&#x8F6C;&#x6362;</p>
+<h3 id="&#x600E;&#x4E48;&#x5224;&#x65AD;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7684;&#x5B57;&#x7B26;&#x662F;utf8&#x4E2D;&#x7684;&#x51E0;&#x5B57;&#x8282;">&#x600E;&#x4E48;&#x5224;&#x65AD;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7684;&#x5B57;&#x7B26;&#x662F;utf8&#x4E2D;&#x7684;&#x51E0;&#x5B57;&#x8282;</h3>
+<p>&#x6839;&#x636E;&#x6570;&#x636E;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x6765;&#x8FDB;&#x884C;&#x5224;&#x65AD; &#x8FD9;&#x4E2A;&#x5B57;&#x7B26;&#x662F;&#x51E0;&#x4E2A;&#x5B57;&#x8282;&#x3002;
+&#x6839;&#x636E;<a href="https://juejin.im/post/5ca5c689f265da30ca24a960#heading-1" target="_blank">&#x8868;&#x683C;</a>&#x627E;&#x5230;&#x7F16;&#x7801;&#x89C4;&#x5219;,&#x7528;&#x6765;&#x533A;&#x5206;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x4E32;&#x7684;&#x5B57;&#x7B26;&#x662F;&#x51E0;&#x5B57;&#x8282;</p>
+<p><strong>js&#x662F;&#x4F7F;&#x7528;&#x5C0F;&#x7AEF;&#x5B58;&#x50A8;&#x7684;&#xFF0C;&#x5C0F;&#x7AEF;&#x5B58;&#x50A8;&#x662F;&#x7B26;&#x5408;&#x6211;&#x4EEC;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x5927;&#x7AEF;&#x662F;&#x903B;&#x8F91;&#x76F8;&#x53CD;</strong>
+<strong><a href="https://baike.baidu.com/item/%E5%A4%A7%E5%B0%8F%E7%AB%AF%E6%A8%A1%E5%BC%8F/6750542?fr=aladdin" target="_blank">&#x5927;&#x5C0F;&#x7AEF;&#x6A21;&#x5F0F;</a></strong></p>
+<p>&#x6BD4;&#x5982; &#x5C0F;&#x7AEF;&#x5B58;&#x50A8;&#x662F;0xxx xxxx &#x5927;&#x7AEF;&#x5B58;&#x50A8;&#x5C31;&#x662F;&#x76F8;&#x53CD;&#x7684; xxxx xxx0</p>
+<h5 id="utf8&#x7F16;&#x7801;&#x89C4;&#x5219;">utf8&#x7F16;&#x7801;&#x89C4;&#x5219;</h5>
+<p>1 &#x5B57;&#x8282; 0xxx xxxx</p>
+<p>2 &#x5B57;&#x8282; 110x xxxx 10xxxxxx</p>
+<p>3 &#x5B57;&#x8282; 1110 xxxx 10xxxxxx 10xxxxxx</p>
+<p>4 &#x5B57;&#x8282; 1111 0xxx 10xxxxxxx 10xxxxxx 10xxxxxx</p>
+<p>js&#x662F;&#x5C0F;&#x7AEF;&#x5B58;&#x50A8;&#x6240;&#x4EE5;&#x53EA;&#x9700;&#x8981;&#x6309;&#x5B57;&#x8282;&#x4F4D;&#x8FDB;&#x884C;&#x5BF9;&#x6BD4;&#x5373;&#x53EF;&#x3002;</p>
+<p>utf8&#x5404;&#x5B57;&#x8282;&#x7F16;&#x7801;&#x89C4;&#x5219;&#x9C9C;&#x660E;&#x5DEE;&#x5F02;&#x6BD4;&#x8F83;&#x5927;&#x7684;&#x662F;&#x9996;&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x9700;&#x8981;&#x5BF9;&#x6BD4;&#x9996;&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x5C31;&#x53EF;&#x5F97;&#x77E5;&#x662F;&#x51E0;&#x4E2A;&#x5B57;&#x8282;&#x3002;</p>
+<h4 id="&#x5BF9;&#x6BD4;&#x89C4;&#x5219;">&#x5BF9;&#x6BD4;&#x89C4;&#x5219;</h4>
+<p>&#x6839;&#x636E; &#x6309;&#x4F4D;&#x4E0E;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x5C06;&#x539F;&#x7801;&#x7684;x&#x5BF9;&#x5E94;&#xFF0C;&#x7F16;&#x7801;&#x89C4;&#x5219;&#x7684;&#x4F4D;&#x503C;&#x8F6C;&#x4E3A;0&#x5176;&#x4ED6;&#x4F4D;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#xFF08;&#x82E5;&#x6709;&#x66F4;&#x597D;&#x7684;&#x5224;&#x65AD;&#x65B9;&#x6CD5;&#xFF0C;&#x975E;&#x5E38;&#x671F;&#x5F85;&#x60A8;&#x7684;&#x7559;&#x8A00;&#xFF09;</p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <strong><a href="">&#x5E26;&#x7B26;&#x53F7;&#x53F3;&#x79FB;&#x64CD;&#x4F5C;&#x7B26; &gt;&gt;&gt;</a></strong>&#xFF08;js&#x5E76;&#x4E0D;&#x4F1A;&#x8F6C;&#x6362;&#x6B63;&#x8D1F;&#x7B26;&#x53F7; &#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x653E;&#x5FC3;&#x4F7F;&#x7528;&#xFF09;</p>
+<p>&#x5BF9;&#x5E94;&#x7F16;&#x7801;&#x89C4;&#x5219;&#x53F3;&#x79FB;n&#x4E2A;&#x4F4D;&#x6765;&#x8FDB;&#x884C;&#x5224;&#x65AD;&#x503C;&#x662F;&#x5426;&#x4E3A;0&#xFF0C;110&#xFF0C;1111&#x3002;(&#x53EA;&#x662F;&#x731C;&#x60F3;&#x4E4B;&#x4E00;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x8FDB;&#x884C;&#x5B9E;&#x9645;&#x9A8C;&#x8BC1;&#xFF0C;&#x76EE;&#x524D;&#x4EC5;&#x5B9E;&#x8DF5;&#x4E86;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x5F0F;)</p>
+<h4 id="&#x63A8;&#x5BFC;&#x8FC7;&#x7A0B;">&#x63A8;&#x5BFC;&#x8FC7;&#x7A0B;</h4>
+<p> <strong>&#x6839;&#x636E;<a href="https://juejin.im/post/5ca43ed2f265da30b3409645#heading-3" target="_blank">&#x6309;&#x4F4D;&#x4E0E;</a>&#x7528; 1 &#x6765;&#x4FDD;&#x7559;&#x539F;&#x7801;&#x5BF9;&#x5E94;&#x7684;&#x7F16;&#x7801;&#x89C4;&#x5219;&#x4F4D;&#x503C;&#x4EE5;&#x53CA;x&#x4F4D;&#x503C;&#x5168;&#x90E8;&#x8F6C;&#x6362;&#x4E3A;0 &#x6765;&#x8FDB;&#x884C;&#x5224;&#x65AD;&#x662F;&#x51E0;&#x5B57;&#x8282;</strong></p>
+<pre><code>            &#x4E8C;&#x8FDB;&#x5236;                        &#x5C06;x&#x66FF;&#x6362;&#x4E3A;0                   &#x5341;&#x516D;&#x8FDB;&#x5236;
+</code></pre><p>1&#x5B57;&#x8282; char0 &amp; 1xxx xxxx = 0xxx xxxx   char0 &amp; 1000 0000 = 0000 0000  char0 &amp; 0x80 = 0</p>
+<p>2&#x5B57;&#x8282; char0 &amp; 111x xxxx = 110x xxxx   char0 &amp; 1110 0000 = 1100 0000  char0 &amp; 0xE0 = 0xC0</p>
+<p>3&#x5B57;&#x8282; char0 &amp; 1111 xxxx = 1110 xxxx   char0 &amp; 1111 0000 = 1110 0000  char0 &amp; 0xF0 = 0xE0</p>
+<p>4&#x5B57;&#x8282; char0 &amp; 1111 1xxx = 1111 0xxx   char0 &amp; 1111 1000 = 1111 0000  char0 &amp; 0xF8 = 0xF0</p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x5224;&#x65AD;&#x89C4;&#x5219;&#x5DF2;&#x7ECF;&#x975E;&#x5E38;&#x660E;&#x4E86;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x8F6C;&#x7801; &#x6211;&#x5C31;&#x53EA;&#x8FDB;&#x884C;&#x4E09;&#x5B57;&#x8282;&#x7684;&#x8F6C;&#x7801;&#x89C4;&#x5219;&#xFF0C;&#x5176;&#x4ED6; &#x82E5;&#x6709;&#x5174;&#x8DA3;&#xFF0C;&#x53EF;&#x81EA;&#x884C;&#x53C2;&#x8003;3&#x5B57;&#x8282;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x63A8;&#x7B97;&#xFF08;&#x52A8;&#x624B;&#x624D;&#x662F;&#x7406;&#x89E3;&#x6700;&#x597D;&#x7684;&#x65B9;&#x5F0F;&#xFF09;</p>
+<pre><code>var buffer = new ArrayBuffer(6);
+var view = new DataView(buffer);
+view.setUint8(0,0xe4);
+view.setUint8(1,0xb8);
+view.setUint8(2,0x80);
+view.setUint8(3,0xe4);
+view.setUint8(4,0xb8);
+view.setUint8(5,0x80);
+//[[Uint8Array]]: Uint8Array(6) [228, 184, 128, 228, 184, 128]
+
+var byteOffset = 0,//&#x8D77;&#x70B9;&#x4ECE;1&#x5F00;&#x59CB;
+    char0,
+    length = view.byteLength;//&#x83B7;&#x53D6;&#x6570;&#x636E;&#x7684;&#x5B57;&#x8282;&#x6570;
+
+while(byteOffset &lt;length){
+    var char0 = view.getUint8(byteOffset),char1,char2,char3;
+    if((char0 &amp; 0x80) == 0){
+        //&#x4EE3;&#x8868;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x8282;
+        byteOffset++;
+        continue;
+    }
+    if((char0 &amp; 0xE0) == 0xC0){
+        //&#x4EE3;&#x8868;&#x662F;2&#x4E2A;&#x5B57;&#x8282;
+        byteOffset+=2;
+        continue;
+    }
+    if((char0 &amp; 0xF0) == 0xE0){
+        //&#x4EE3;&#x8868;&#x662F;3&#x4E2A;&#x5B57;&#x8282;
+        //3 &#x5B57;&#x8282;&#x7F16;&#x7801;&#x89C4;&#x5219; 1110 xxxx 10xxxxxx 10xxxxxx
+        //&#x8FDB;&#x5165;&#x8FD9;&#x4E2A;&#x533A;&#x95F4;&#x65F6;&#xFF0C;char0&#x662F;&#x7B26;&#x5408; 1110 xxxx&#x7684;&#x89C4;&#x5219;&#x7684;
+        //&#x5229;&#x7528;&#x6309;&#x4F4D;&#x4E0E;&#x6765;&#x8FDB;&#x884C;&#x622A;&#x53D6;char0&#x5BF9;&#x5E94;&#x7F16;&#x7801;&#x89C4;&#x5219;x&#x7684;&#x4F4D;&#x503C; &#x4E5F;&#x5C31;&#x662F; 0000 1111  0xF
+        //&#x6211;&#x4EEC;&#x5148;&#x8F6C;&#x6362;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x8282;,&#x4E8C;&#x8FDB;&#x5236; &#x901F;&#x7B97;&#x6CD5; &#x5148;&#x5C06;&#x4E8C;&#x8FDB;&#x5236;&#x8FDB;&#x884C;&#x8F6C;&#x6362;16&#x8FDB;&#x5236;(4&#x4F4D;&#x4E8C;&#x8FDB;&#x5236;&#x4E3A;&#x4E00;&#x4F4D;&#x5341;&#x516D;&#x8FDB;&#x5236;)
+        //228 &amp; 0xF  1110 0100 &amp; 0000 1111 = 100 = 0x4 = 4
+
+        char0 = char0 &amp;  0xF = 4
+
+        //&#x7B2C;&#x4E8C;&#x5B57;&#x8282;&#x8FDB;&#x884C;&#x8F6C;&#x6362;
+        //&#x7B2C;&#x4E8C;&#x5B57;&#x8282;&#x7F16;&#x7801;&#x89C4;&#x5219; 10xx xxxx &#x540C;&#x7406;&#x5229;&#x7528;&#x6309;&#x4F4D;&#x4E0E; 0011 1111 0x3F
+        //184 &amp; 0x3F 1011 1000 &amp; 0011 1111 = 11 1000 = 0x38 = 56
+        char1 = view.getUint8(byteOffset++);
+        char1 = char1 &amp; 0x3F = 56
+
+        //&#x7B2C;&#x4E09;&#x5B57;&#x8282;&#x8FDB;&#x884C;&#x8F6C;&#x6362;
+        //&#x7B2C;&#x4E09;&#x5B57;&#x8282;&#x7F16;&#x7801;&#x89C4;&#x5219; 10xx xxxx &#x540C;&#x7406;&#x5229;&#x7528;&#x6309;&#x4F4D;&#x4E0E; 0011 1111 0x3F
+        //128 &amp; 0x3F 1000 0000 &amp; 0011 1111 = 00 0000 = 0x00 = 0
+
+        char2 = view.getUint8(byteOffset++)  
+        char2 = char2&amp; 0x3F = 0
+
+        //&#x4E0B;&#x9762;&#x624D;&#x662F;&#x91CD;&#x70B9;,&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x6309;&#x5B57;&#x8282;&#x8F6C;&#x7801;&#x5B8C;&#x6210; &#x90A3;&#x4E48;&#x5982;&#x4F55;&#x8FDB;&#x884C;&#x7EC4;&#x5408;&#x5462;&#x3002;
+        //&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x5229;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x8FDB;&#x884C;&#x62FC;&#x63A5;&#x3002;
+        //&apos;100&apos; + &apos;11 1000&apos; + &apos;00 0000&apos; = &apos;0100 1110 0000 0000&apos;
+        //parseInt(100111000000000,2) = 19968
+        //String.fromCharCode(19968) = &apos;&#x4E00;&apos;
+        //&#x4E0A;&#x9762; &#x6211;&#x62BD;&#x8C61;&#x7684;&#x7528;&#x4E8C;&#x8FDB;&#x5236;&#x7684;&#x8FC7;&#x7A0B;&#x6765;&#x5C55;&#x73B0;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x8F6C;&#x6362;&#x4E2D; &#x662F;&#x770B;&#x4E0D;&#x5230;&#x4E8C;&#x8FDB;&#x5236;&#x7684;&#x3002;
+        //parseInt(Number(char0.toString(2)  +  char1.toString(2) +  char2.toString(2)),2)
+
+        //&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x5229;&#x7528;&#x5DE6;&#x79FB;&#x64CD;&#x4F5C;&#x7B26; &lt;&lt;
+        //&#x7F16;&#x7801;&#x89C4;&#x5219; 1110 xxxx 10xxxxxx 10xxxxxx &#x7B2C;&#x4E00;&#x5B57;&#x8282;&#x540E;&#x9762;&#x6709;12&#x4E2A;x &#x6240;&#x4EE5;&#x7B2C;&#x4E00;&#x5B57;&#x8282;&#x672B;&#x4F4D;&#x8865;12&#x4E2A;0
+        //char0 &gt;&gt; 12 = 4 &gt;&gt; 12
+        //00000000 00000000 00000000 00000100 &gt;&gt; 12 = 0100 0000 0000 0000 = 0x4000 = 16384
+        //&#x7B2C;&#x4E8C;&#x81EA;&#x5DF1;&#x540E;&#x9762;&#x6709;6&#x4E2A;x &#x6240;&#x4EE5;&#x7B2C;&#x4E8C;&#x5B57;&#x8282;&#x8865;6&#x4E2A;0
+        //char1 &gt;&gt; 6 = 56 &gt;&gt; 12
+        //00000000 00000000 00000000 00111000 &gt;&gt; 6 =       1110 0000 0000 = 0xE00 = 3584
+        //&#x7B2C;&#x4E09;&#x5B57;&#x8282;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x6240;&#x4EE5;&#x4E0D;&#x9700;&#x8981;&#x672B;&#x4F4D;&#x8865;0                   
+        //&#x5229;&#x7528;&#x6309;&#x4F4D;&#x6216; &#x8FDB;&#x884C;&#x7EC4;&#x5408;
+        16384 | 3584 | 0 =                            0100 1110 0000 0000 = 0x4e00 = 19968
+        //19968 &lt; 0x10000(U+10000),&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x8F6C;&#x7801;,&#x8C03;&#x7528;String.fromCharCode&#x5373;&#x53EF;
+        //Unicode&#x7801;&#x5C31;&#x8F6C;&#x6362;&#x5B8C;&#x6210;&#x4E86;&#x3002;
+        continue;
+    }
+
+    if( (char0 &amp; 0xF8) == 0xF0){
+        //&#x4EE3;&#x8868;&#x662F;4&#x4E2A;&#x5B57;&#x8282;
+        byteOffset+=4;
+        continue;
+    }
+    throw RangeError(&apos;&#x5F15;&#x7528;&#x9519;&#x8BEF;&apos;);
+}
+</code></pre><p>&#x8FD9;&#x91CC;&#x7F16;&#x7801;&#x8F6C;&#x6362;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-11-28 16:07:15
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: WebSocket二进制数据传输">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Unicode转UTF16与UTF8.html" class="navigation navigation-next " aria-label="Next page: Unicode转UTF16与UTF8">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"UTF 16和UTF 8转Unicode","level":"1.8.1","depth":2,"next":{"title":"Unicode转UTF16与UTF8","level":"1.8.2","depth":2,"path":"7-webSocket二进制数据传输/Unicode转UTF16与UTF8.md","ref":"7-webSocket二进制数据传输/Unicode转UTF16与UTF8.md","articles":[]},"previous":{"title":"WebSocket二进制数据传输","level":"1.8","depth":1,"path":"7-WebSocket二进制数据传输/README.md","ref":"7-WebSocket二进制数据传输/README.md","articles":[{"title":"UTF 16和UTF 8转Unicode","level":"1.8.1","depth":2,"path":"7-webSocket二进制数据传输/UTF-16和UTF-8转Unicode.md","ref":"7-webSocket二进制数据传输/UTF-16和UTF-8转Unicode.md","articles":[]},{"title":"Unicode转UTF16与UTF8","level":"1.8.2","depth":2,"path":"7-webSocket二进制数据传输/Unicode转UTF16与UTF8.md","ref":"7-webSocket二进制数据传输/Unicode转UTF16与UTF8.md","articles":[]},{"title":"字节算法准备基础","level":"1.8.3","depth":2,"path":"7-webSocket二进制数据传输/字节算法准备基础.md","ref":"7-webSocket二进制数据传输/字节算法准备基础.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","-highlight","-livereload","search-plus","github","github-buttons","include-codeblock","emphasize","tbfed-pagefooter","favicon","-sharing","sharing-plus","graph","chart","theme-comscore","pageview-count"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/AlanSean/book"},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"graph":{},"sitemap-general":{"prefix":"http://gitbook.hqboke.com"},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"theme-comscore":{},"pageview-count":{},"github-buttons":{"repo":"AlanSean/book","types":["star"],"size":"small"},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":true},"sharing":{"qq":false,"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"miao","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"book","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"//www.hqboke.cn"}},"gitbook":"3.2.3","description":"记录杂学,nginx,http2,https,serviceWorker,javascript,html,Vue,react,webpack"},"file":{"path":"7-webSocket二进制数据传输/UTF-16和UTF-8转Unicode.md","mtime":"2019-11-28T08:07:15.901Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-25T02:57:55.904Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
