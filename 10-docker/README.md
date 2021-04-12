@@ -52,3 +52,21 @@
             }
 
       ```
+
+## docker 常用命令
+
+```
+
+docker run [OPTIONS] IMAGE [COMMOND] [ARGS...]
+
+# OPTIONS 说明
+   --name：容器名字
+   --rm：容器停止自动删除容器
+   -i：--interactive,交互式启动
+   -t：--tty，分配终端
+   -v：--volume,挂在数据卷
+   -d：--detach，后台运行
+```
+
+
+## Cmake 交叉编译配置
