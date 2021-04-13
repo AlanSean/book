@@ -56,6 +56,11 @@
 ## docker 常用命令
 
 ```
+查看容器
+docker ps -a 
+
+查看镜像
+docker imgages
 
 docker run [OPTIONS] IMAGE [COMMOND] [ARGS...]
 
@@ -66,6 +71,7 @@ docker run [OPTIONS] IMAGE [COMMOND] [ARGS...]
    -t：--tty，分配终端
    -v：--volume,挂在数据卷
    -d：--detach，后台运行
-```
 
+
+docker run --rm --name [起个容器名字] -it -v [文件目录]:/workdir [镜像名字]
 ```
